@@ -11,7 +11,6 @@ margin:0 .5rem;
   border-radius: 60px;
 };
 `
-
 export const Logo = styled.div`
 padding:40px;
 background-color: #e0e0e0;
@@ -25,6 +24,7 @@ align-items: center;
 width: 100%;
 position: fixed;
 background-color: #ffffff;
+z-index:1000;
 `
 export const ActionContainer = styled.div`
 display: flex;
@@ -38,7 +38,11 @@ function Navbar () {
   return (
     <>
     <Wrapper>
+<<<<<<< HEAD
       <Logo src={Imglogo}/>
+=======
+      <Logo src={logoImage}/>
+>>>>>>> ab46ee62d0f7b28802a9442f1dc967cad6373641
       <ActionContainer>
         <Action>
           <>Add Device</>
@@ -52,4 +56,4 @@ function Navbar () {
   )
 }
 
-export default Navbar
+export default Navbar2
