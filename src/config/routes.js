@@ -10,18 +10,18 @@ export default{
   Welcome:{
     path: "/",
     exact: true,
-    component: lazy(()=> import('../pages/welcome'))
+    component: lazy(()=> import('../pages/Welcome'))
   },
 
   Login:{
-    path: "/Login",
+    path: "/login",
     exact: true,
-    component: lazy(()=> import('../pages/login'))
+    component: lazy(()=> import('../pages/Login'))
   },
 
   Register:{
-    path: "/Register",
+    path: "/register",
     exact: true,
-    component: lazy(()=> import('../pages/register'))
+    component: lazy(()=> import('../pages/Register'))
   }
 }
