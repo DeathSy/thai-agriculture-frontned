@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import LogoBlock from '../components/LogoBlock'
-// import logoImage from '../assets/logo.png'
+import logoImage from '../assets/logo.png'
 
 export const Action = styled.div`
 padding:.7rem 4rem;
@@ -37,21 +36,8 @@ margin:0 2rem;
 function Navbar () {
   return (
     <>
-<<<<<<< HEAD:src/components/Navbar.js
-      <Wrapper>
-        {/* <LogoBlock src={logoImage} /> */}
-        <ActionContainer>
-          <Action>
-            <>Login</>
-          </Action>
-          <Action>
-            <>Register</>
-          </Action>
-        </ActionContainer>
-      </Wrapper>
-=======
     <Wrapper>
-      {/* <LogoBlock src={logoImage}/> */}
+      <Logo src={logoImage}/>
       <ActionContainer>
         <Action>
           <>Login</>
@@ -61,7 +47,6 @@ function Navbar () {
         </Action>
       </ActionContainer>
     </Wrapper>
->>>>>>> 95a757921e58750dca21063e6662be5e5ac36ca8:src/components/Navbar/Navbar.js
     </>
   )
 }
