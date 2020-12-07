@@ -10,6 +10,7 @@ jobs:
   notify:
     runs_on: ubuntu-latest
     steps:
+      name: Notify on Failed
       if: ${{ github.event.workflow_run.conclusion == 'failed' }}
       uses: snow-actions/line-notify@v1.0.0
       with:
