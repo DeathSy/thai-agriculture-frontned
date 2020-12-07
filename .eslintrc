@@ -1,7 +1,10 @@
 {
     "parser": "babel-eslint",
     "extends":[
+      "react-app",
+      "react-app/jest",
       "standard",
+      "standard-jsx",
       "standard-react"
     ],
     "rules": {
