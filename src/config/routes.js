@@ -4,7 +4,7 @@ export default{
   Home:{
     path: "/home",
     exact: true,
-    component: lazy(()=> import('../pages/home'))
+    component: lazy(()=> import('../pages/Home'))
   },
 
   Welcome:{
