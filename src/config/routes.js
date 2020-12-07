@@ -4,24 +4,24 @@ export default{
   Home:{
     path: "/home",
     exact: true,
-    component: lazy(()=> import('../pages/Home'))
+    component: lazy(()=> import('../pages/home'))
   },
 
   Welcome:{
     path: "/",
     exact: true,
-    component: lazy(()=> import('../pages/Welcome'))
+    component: lazy(()=> import('../pages/welcome'))
   },
 
   Login:{
     path: "/Login",
     exact: true,
-    component: lazy(()=> import('../pages/Login'))
+    component: lazy(()=> import('../pages/login'))
   },
 
   Register:{
     path: "/Register",
     exact: true,
-    component: lazy(()=> import('../pages/Register'))
+    component: lazy(()=> import('../pages/register'))
   }
 }
