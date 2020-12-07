@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import LogoBlock from '../components/LogoBlock'
 import logoImage from '../assets/logo.png'
 
 export const Action = styled.div`
@@ -24,7 +23,7 @@ align-items: center;
 width: 100%;
 position: fixed;
 background-color: #ffffff;
-z-index:1000
+z-index:1000;
 `
 export const ActionContainer = styled.div`
 display: flex;
@@ -37,17 +36,17 @@ margin:0 2rem;
 function Navbar () {
   return (
     <>
-    <Wrapper>
-      <LogoBlock src={logoImage}/>
-      <ActionContainer>
-        <Action>
-          <>Login</>
-        </Action>
-        <Action>
-          <>Register</>
-        </Action>
-      </ActionContainer>
-    </Wrapper>
+      <Wrapper>
+        <Logo src={logoImage} />
+        <ActionContainer>
+          <Action>
+            <>Login</>
+          </Action>
+          <Action>
+            <>Register</>
+          </Action>
+        </ActionContainer>
+      </Wrapper>
     </>
   )
 }
