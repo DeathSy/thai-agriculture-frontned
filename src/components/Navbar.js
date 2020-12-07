@@ -6,13 +6,13 @@ export const Action = styled.div`
 padding:.7rem 4rem;
 margin:0 .5rem;
 :hover {
-  background-color: #ddd;
+  background-color: #10c18b;
   border-radius: 60px;
 };
 `
 export const Logo = styled.div`
 padding:40px;
-background-color:red;
+background-color: #e0e0e0;
 margin:.5rem;
 `
 
@@ -22,7 +22,7 @@ flex: 1;
 align-items: center;
 width: 100%;
 position: fixed;
-background-color:green;
+background-color: #ffffff;
 `
 export const ActionContainer = styled.div`
 display: flex;
