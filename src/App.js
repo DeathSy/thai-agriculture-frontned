@@ -5,11 +5,10 @@ import Authprovider from './contexts/ActionContext'
 import Navbar from './components/Navbar'
 import GlobalStyle from './components/GlobalStyle'
 
-
 function App () {
   return (
     <Authprovider>
-    <Navbar />
+      <Navbar />
       <GlobalStyle />
       <Router>
         <Suspense fallback='...Loading please wait...'>
