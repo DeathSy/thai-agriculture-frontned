@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logoImage from '../assets/logo.png'
+// import logoImage from '../assets/logo.png'
 
 export const Action = styled.div`
 padding:.7rem 4rem;
