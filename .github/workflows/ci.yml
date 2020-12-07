@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+
+env:
+  node_version: "15.x"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.node_version }}
+      - uses: c-hive/gha-yarn-cache@v1
+      - name: Install JS dependencies
+        run: yarn install
+      - name: Lint
+        run: ls yarn.lock && NODE_ENV=testing yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.node_version }}
+      - uses: c-hive/gha-yarn-cache@v1
+      - name: Install JS dependencies
+        run: yarn install
+      - name: Test
+        run: ls yarn.lock && NODE_ENV=testing yarn test
