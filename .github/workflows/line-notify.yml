@@ -1,4 +1,4 @@
-name: Line Nofify
+name: Line-Nofify
 
 on:
   workflow_run:
@@ -6,7 +6,7 @@ on:
     types:
       - completed
 
-job:
+jobs:
   notify:
     if: ${{ github.event.workflow_run.conclusion == 'failed' }}
     uses: snow-actions/line-notify@v1.0.0
