@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import RegisterAPI from '../services/registerAPI'
+import RegisterAPI from '../../services/registerAPI'
 
 const Container = styled.div`
     height: 600px;
@@ -48,25 +48,10 @@ const Input = styled.input`
     }
 `
 
-const Textarea = styled.textarea`
-    height: 150px;
-    margin: 10px 0;
-    /* padding: 5px 10px; */
-    border-radius: 5px;
-    border: none;
-    border:solid 1px gray;
-    outline: none;
-    resize: none;
-    padding: 5px 10px;
-    &:focus {
-        border: 1px solid #0C1737;
-    }
-`
-
 const Button = styled.button`
     height: 45px;
     width: 110px;
-    background-color: #4678B0;
+    background-color: #10c18b ;
     margin-top: 30px;
     border: 0;
     color: white;
@@ -75,7 +60,7 @@ const Button = styled.button`
     border-radius: 5px;
     cursor: pointer;
     &:hover {
-    background-color: #1E3859;
+    background-color: #00a472;
     }
 `
 
@@ -98,78 +83,86 @@ const Register = styled.button`
     border: none;
     background-color: unset;
     font-size: 16px;
-    color: #4678B0;
+    color: #10c18b ;
     cursor: pointer;
     outline: none;
 `
 
-function FormRegister(callback) {
-
+function FormRegister (callback) {
   const [values, setValues] = useState({
-    username:'',
-    email:'',
-    password:'',
-    contact:''
-  });
+    username: '',
+    email: '',
+    phone_number: '',
+    password: ''
+  })
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting] = useState(false)
 
   const handleChange = e => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setValues({
       ...values,
       [name]: value
-    });
-  };
+    })
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-    console.log(values,"1")
+    e.preventDefault()
+    console.log(values, '1')
     RegisterAPI(values)
     // console.log(values)
-  };
+  }
 
   useEffect(
     () => {
       if (isSubmitting) {
-        callback();
+        callback()
       }
     },
     []
-  );
+  )
 
-
-    return (
+  return (
       <Container>
         <Form onSubmit={handleSubmit}>
             <Title>Register</Title>
 
             <a>Username</a>
-            <Input 
-              type ="text" 
-              name="username" 
-              id="username" 
+            <Input
+              type ="text"
+              name="username"
+              id="username"
               placeholder="e.g. JohnDoe"
-              value={values.username} 
+              value={values.username}
               onChange={handleChange}>
             </Input>
             {/* requires at least 5 letters */}
 
             <a>Email</a>
-            <Input 
-              type ="text" 
-              name="email" 
-              id="email" 
+            <Input
+              type ="text"
+              name="email"
+              id="email"
               placeholder="e.g. JohnDoe@example.com"
               value={values.email}
               onChange={handleChange}>
             </Input>
 
+            <a>Phone Number</a>
+            <Input
+              type ="text"
+              name="phone_number"
+              id="phone_number"
+              placeholder="e.g. 1234567890"
+              value={values.email}
+              onChange={handleChange}>
+            </Input>
+
             <a>Password</a>
-            <Input 
-              type ="password" 
-              name="password" 
-              id="password" 
+            <Input
+              type ="password"
+              name="password"
+              id="password"
               placeholder="Password"
               value={values.password}
               onChange={handleChange}>
@@ -177,21 +170,12 @@ function FormRegister(callback) {
             {/* requires at least 8 digits */}
 
             <a>Confirm Password</a>
-            <Input 
-              type ="password" 
-              name="comfirmPassword" 
-              id="comfirmPassword" 
+            <Input
+              type ="password"
+              name="comfirmPassword"
+              id="comfirmPassword"
               placeholder="Type your password again">
             </Input>
-
-            <a>Contact</a>
-            <Textarea
-              type ="text"
-              name="contact" 
-              placeholder="Leave contact for your party"
-              value={values.contact}
-              onChange={handleChange}>
-            </Textarea>
 
             <Submit>
             <Button type ="submit">Submit</Button>
@@ -200,7 +184,7 @@ function FormRegister(callback) {
 
         </Form>
         </Container>
-    )
+  )
 }
 
 export default FormRegister
