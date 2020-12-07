@@ -37,7 +37,7 @@ function Navbar () {
   return (
     <>
     <Wrapper>
-      <Logo src={logoImage}/>
+      <Logo src={logoImage} />
       <ActionContainer>
         <Action>
           <>Login</>
