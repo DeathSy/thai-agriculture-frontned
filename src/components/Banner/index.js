@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BackgroundBlock from './BackgroundBlock'
-import Img from '../../assets/banner3.jpg'
+import Img from '../../assets/bg.jpg'
 
 const Container = styled.div`
   width: 100vw;
