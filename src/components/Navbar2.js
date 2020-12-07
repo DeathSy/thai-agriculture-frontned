@@ -2,11 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 import logoImage from '../assets/logo.png'
 
-export const Action = styled.div`
+export const ActionRegister = styled.div`
+padding:.7rem 4rem;
+margin:0 .5rem;
+background-color: #10c18b;
+border-radius: 60px;
+:hover {
+  background-color: #ffffff ;
+  border-radius: 60px;
+};
+`
+export const ActionLogin = styled.div`
 padding:.7rem 4rem;
 margin:0 .5rem;
 :hover {
-  background-color: #10c18b;
+  background-color: #00a472;
   border-radius: 60px;
 };
 `
@@ -38,12 +48,12 @@ function Navbar () {
     <Wrapper>
       <Logo src={logoImage}/>
       <ActionContainer>
-        <Action>
-          <>ADD Divice</>
-        </Action>
-        <Action>
+        <ActionLogin>
           <>Login</>
-        </Action>
+        </ActionLogin>
+        <ActionRegister>
+          <>Register</>
+        </ActionRegister>
       </ActionContainer>
     </Wrapper>
     </>
