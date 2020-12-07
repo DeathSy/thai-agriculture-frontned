@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import withHelmet from '../utils/withHelmet'
+import withHelmet from '../util/withHelmet'
 
 
 function Home() {
