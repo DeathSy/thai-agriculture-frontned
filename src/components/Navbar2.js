@@ -23,6 +23,7 @@ align-items: center;
 width: 100%;
 position: fixed;
 background-color: #ffffff;
+z-index:1000;
 `
 export const ActionContainer = styled.div`
 display: flex;
