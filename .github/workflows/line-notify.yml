@@ -9,12 +9,11 @@ on:
 jobs:
   notify:
     runs_on: ubuntu-latest
+    if: ${{ github.event.check_run.conclusion == 'failure' }}
     steps:
-      - name: Notify on Failed
-        if: ${{ github.event.check_run.conclusion == 'failure' }}
-        uses: snow-actions/line-notify@v1.0.0
-        with:
-          access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
-          message: |
-            Please fix immediately
-            ${{ github.actor }} failed to build ${{ github.repository }} on branch ${{ github.ref }}
+      uses: snow-actions/line-notify@v1.0.0
+      with:
+        access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
+        message: |
+          Please fix immediately
+          ${{ github.actor }} failed to build ${{ github.repository }} on branch ${{ github.ref }}
