@@ -8,7 +8,6 @@ const BackgroundImage = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
- 
   position: relative;
   z-index:11;
 `
@@ -16,14 +15,14 @@ const BackgroundOverylay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
-function BackgroundBlock ({ src, height = 40, children }) {
+function BackgroundBlock ({ src, height = 100, children }) {
   return (
     <div>
       <BackgroundImage src={src} height={height}>
