@@ -33,11 +33,11 @@ align-items: center;
 margin:0 2rem;
 `
 
-function Navbar2 () {
+function Navbar () {
   return (
     <>
     <Wrapper>
-      <Logo src={logoImage} />
+      <Logo src={logoImage}/>
       <ActionContainer>
         <Action>
           <>Add Device</>
