@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-// import logoImage from '../assets/logo.png'
+import Logo from './Logo'
+import Imglogo from '../../assets/logo.png'
 
 export const Action = styled.div`
 padding:.7rem 4rem;
@@ -37,7 +38,7 @@ function Navbar () {
   return (
     <>
     <Wrapper>
-      {/* <Logo src={logoImage}/> */}
+      <Logo src={Imglogo}/>
       <ActionContainer>
         <Action>
           <>Add Device</>
