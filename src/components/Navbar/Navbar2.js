@@ -38,11 +38,7 @@ function Navbar () {
   return (
     <>
     <Wrapper>
-<<<<<<< HEAD
       <Logo src={Imglogo}/>
-=======
-      <Logo src={logoImage}/>
->>>>>>> ab46ee62d0f7b28802a9442f1dc967cad6373641
       <ActionContainer>
         <Action>
           <>Add Device</>
