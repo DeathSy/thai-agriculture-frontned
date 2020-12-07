@@ -22,7 +22,7 @@ jobs:
       - name: Install JS dependencies
         run: yarn install
       - name: Lint
-        run: ls package-lock.json && NODE_ENV=testing yarn lint
+        run: ls yarn.lock && NODE_ENV=testing yarn lint
 
   test:
     runs-on: ubuntu-latest
@@ -37,4 +37,4 @@ jobs:
       - name: Install JS dependencies
         run: yarn install
       - name: Test
-        run: ls package-lock.json && NODE_ENV=testing yarn test
+        run: ls yarn.lock && NODE_ENV=testing yarn test
