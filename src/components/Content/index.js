@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {fetchDataById} from '../../services/fetchData'
 
 const Container = styled.div`
   width: 100vw;
@@ -53,10 +54,18 @@ align-items:center;
 `
 
 function Contenst () {
+
+  const [data , SetData ] = React.useState()
+  React.useEffect(() => {
+    fetchDataById('IMEU001').then(response => response.json()).then(response => response.data).then(response => SetData(response))
+  },[])
+
   return (
     <div>
       <Container>
         <h1>WELLCOME</h1>
+        {data?.map((item,index) => (<p>item. </p>))}
+
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
