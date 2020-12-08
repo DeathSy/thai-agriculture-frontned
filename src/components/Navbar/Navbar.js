@@ -19,9 +19,8 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   position: fixed;
-  background-color: #fff;
-  /* background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
-  color:${props => (props.isScroll ? '#000' : '#fff')}; */
+  background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
+  color: ${props => (props.isScroll ? '#000' : '#fff')};
   z-index: 1000;
 
   transition: background-color 0.5;
