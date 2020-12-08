@@ -81,6 +81,7 @@ const Submit = styled.div`
 `
 
 const Register = styled.button`
+    border-radius: 20px;
     border: none;
     background-color: unset;
     font-size: 16px;
@@ -115,21 +116,33 @@ function FormLogin () {
   }
 
   return (
-      <Container>
-            <Form>
-                <Title>Login</Title>
-                <a>Username</a>
-                <Input type="text" name="username" id="username" placeholder="e.g. JohnDoe" onChange={handleOnInputUsername} onKeyDown={handleKeyPress}></Input>
-
-                <a>Password</a>
-                <Input type="password" name="password" id="password" placeholder="Password" onChange={handleOnInputPassword} onKeyDown={handleKeyPress}></Input>
-
-                <Submit>
-                    <Login type="submit" onClick={handleOnSubmit} >Login</Login>
-                    <a>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></a>
-                </Submit>
-            </Form>
-      </Container>
+    <Container>
+      <Form>
+        <Title>Login</Title>
+        <a>Username</a>
+        <Input
+          type='text'
+          name='username'
+          id='username'
+          placeholder='e.g. JohnDoe'
+          onChange={handleOnInputUsername}
+          onKeyDown={handleKeyPress}
+        />
+        <a>Password</a>
+        <Input
+          type='password'
+          name='password'
+          id='password'
+          placeholder='Password'
+          onChange={handleOnInputPassword}
+          onKeyDown={handleKeyPress}
+        />
+        <Submit>
+          <Login type='submit' onClick={handleOnSubmit}>Login</Login>
+          <a>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></a>
+        </Submit>
+      </Form>
+    </Container>
   )
 }
 

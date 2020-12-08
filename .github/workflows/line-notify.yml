@@ -8,10 +8,12 @@ on:
 
 jobs:
   notify:
-    if: ${{ github.event.workflow_run.conclusion == 'failed' }}
-    uses: snow-actions/line-notify@v1.0.0
-    with:
-      access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
-      message: |
-        Please fix immediately
-        ${{ github.actor }} failed to build ${{ github.repository }} on branch ${{ github.ref }}
+    runs_on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion != 'success' }}
+    steps:
+      - uses: snow-actions/line-notify@v1.0.0
+        with:
+          access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
+          message: |
+            Please fix immediately
+            ${{ github.actor }} failed to build ${{ github.repository }} on branch ${{ github.ref }}

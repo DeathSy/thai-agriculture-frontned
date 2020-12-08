@@ -9,6 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
+  background-color:blue;
 
   h1{
     font-weight:600;
@@ -59,9 +60,9 @@ function Contenst () {
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
-          <Box />
-          <Box />
-          <Box />
+            <Box />
+            <Box />
+            <Box />
           </WrapperBox>
         </AddDevice>
       </Container>
