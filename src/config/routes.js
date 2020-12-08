@@ -1,6 +1,6 @@
 import { lazy } from 'react'
 
-export default {
+const routes = {
   Home: {
     path: '/home',
     exact: true,
@@ -25,3 +25,4 @@ export default {
     component: lazy(() => import('../pages/Register'))
   }
 }
+export default routes
