@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
-import { Route } from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App';
 
-it('render routes', () => {
-  const {queryByTestId} = render(<Route/>)
+it('renders without crashing', () => {
+  const div = document.createElement('div');
 
-  expect(queryByTestId('routes')).toBeTruthy()
+  ReactDOM.render(<App/>, div)
 });

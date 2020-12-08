@@ -14,7 +14,7 @@ function App () {
         <Suspense fallback='...Loading please wait...'>
           <Switch>
             {Object.keys(routes).map(routeKey => (
-              <Route data-testid='routes' key={routeKey} {...routes[routeKey]} />
+              <Route key={routeKey} {...routes[routeKey]} />
             ))}
           </Switch>
         </Suspense>
