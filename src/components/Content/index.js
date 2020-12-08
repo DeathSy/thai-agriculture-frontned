@@ -82,6 +82,7 @@ function Content () {
                   </Close>
                 </Box>
                 )}
+            <AddInfo />
           </WrapperBox>
         </AddDevice>
         <ButtonAddDevice />
