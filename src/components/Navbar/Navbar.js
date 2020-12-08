@@ -19,12 +19,12 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   position: fixed;
+  z-index: 1000;
   background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
   color: ${props => (props.isScroll ? '#000' : '#fff')};
-  z-index: 1000;
-
   transition: background-color 0.5;
 `
+
 export const ActionContainer = styled.div`
   display: flex;
   flex: 1;
@@ -36,7 +36,7 @@ export const ActionContainer = styled.div`
 function Navbar () {
   const isScroll = useScroll({ scrollRange: 20 })
   const i = 1
-  if (i === 1) {
+  if (i === 2) {
     return (
       <Wrapper isScroll={isScroll}>
         <Logo src={Imglogo} />
@@ -56,7 +56,7 @@ function Navbar () {
         <Logo src={Imglogo} />
         <ActionContainer>
           <Action>
-            <>ADD Device</>
+            <>Add Device</>
           </Action>
           <Action>
             <>Logout</>

@@ -3,6 +3,7 @@ import withHelmet from '../util/withHelmet'
 import styled from 'styled-components'
 import Banner from '../components/Banner/index'
 import Content from '../components/Content/index'
+import Navbar from '../components/Navbar/Navbar'
 
 const Container = styled.div`
   width: 100vw;
@@ -13,6 +14,7 @@ const Container = styled.div`
 function Home () {
   return (
     <Container>
+      <Navbar />
       <Banner />
       <Content />
     </Container>
