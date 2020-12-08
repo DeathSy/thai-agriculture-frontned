@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import ButtonAddDevice from '../ButtonModal/ButtonDevice'
+import AddInfo from '../ButtonModal/ButtonInfo'
 
 const Container = styled.div`
   width: 100vw;
@@ -9,12 +11,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
-  background-color:blue;
+  background-color: blue;
 
-  h1{
-    font-weight:600;
-    font-size:1.5rem;
-    padding-bottom:3rem;
+  h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
   }
 `
 const AddDevice = styled.div`
@@ -22,14 +24,14 @@ const AddDevice = styled.div`
   height: 50vh;
   background-color: yellowgreen;
   border-radius: 10px;
-  padding-top:1.5rem;
-  padding-left:1.5rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
 
-  h2{
-    font-size:1rem;
-    font-weight:550;
-    padding-bottom:1.5rem;
-    margin-left:2rem;
+  h2 {
+    font-size: 1rem;
+    font-weight: 550;
+    padding-bottom: 1.5rem;
+    margin-left: 2rem;
   }
 `
 const Box = styled.div`
@@ -37,19 +39,17 @@ const Box = styled.div`
   height: 20vh;
   background-color: blue;
   border-radius: 10px;
-  margin-bottom:1.5rem;
-  margin-left:2rem;
-  margin-right:1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 1.5rem;
 `
 
 const WrapperBox = styled.div`
-width: 70vw;
-height: auto;
-display:flex;
-flex-direction:row;
-align-items:center;
-
-
+  width: 70vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 
 function Contenst () {
@@ -63,8 +63,10 @@ function Contenst () {
             <Box />
             <Box />
             <Box />
+            <AddInfo />
           </WrapperBox>
         </AddDevice>
+        <ButtonAddDevice />
       </Container>
     </div>
   )
