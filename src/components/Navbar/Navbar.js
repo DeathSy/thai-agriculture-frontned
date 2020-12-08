@@ -33,7 +33,7 @@ export const ActionContainer = styled.div`
   margin: 0 2rem;
 `
 
-function Navbar() {
+function Navbar () {
   const isScroll = useScroll({ scrollRange: 20 })
   const i = 1
   if (i === 1) {
