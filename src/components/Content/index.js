@@ -56,8 +56,6 @@ const Close = styled.div`
   display:flex;
   justify-content:flex-end;
   padding-top:0.3rem;
-  
- 
 `
 
 function Content () {
