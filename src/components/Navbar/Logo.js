@@ -9,17 +9,17 @@ const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
   position: relative;
-  z-index:11;
-  margin-top:0.5rem;
-  margin-left:1rem;
+  z-index: 11;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
 `
 const BackgroundOverylay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
-  color:${props => (props.isScroll ? '#000' : '#fff')};
-  transition:background-color 0.5;
+  color: ${props => (props.isScroll ? '#000' : '#fff')};
+  transition: background-color 0.5;
   display: flex;
   flex-direction: column;
   justify-content: center;

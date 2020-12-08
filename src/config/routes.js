@@ -1,4 +1,5 @@
 import { lazy } from 'react'
+
 const routes = {
   Home: {
     path: '/home',

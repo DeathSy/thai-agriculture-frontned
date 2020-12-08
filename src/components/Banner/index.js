@@ -14,7 +14,7 @@ const Bannerimg = styled.div`
   background-color: red;
 `
 
-function Banner () {
+function Banner() {
   return (
     <div>
       <Container>
