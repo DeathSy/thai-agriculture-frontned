@@ -30,7 +30,7 @@
 //       headers: { ...JSON_HEADER },
 //       data: JSON.stringify({
 //         username: username,
-//         password: password 
+//         password: password
 //       })
 //     }
 //   ).then(response => response)
