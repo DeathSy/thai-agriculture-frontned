@@ -6,7 +6,7 @@ import Content from '../components/Content/index'
 
 const Container = styled.div`
   width:100vw;
-  height: 100vh;
+  height: 200vh;
   background-color:firebrick;
 `
 
@@ -14,8 +14,8 @@ function Home () {
   return (
     <div>
       <Container>
-        <Banner/>
-        <Content/>
+        <Banner />
+        <Content />
       </Container>
     </div>
   )
