@@ -15,7 +15,7 @@ function useScroll ({ scrollRange = 20 }) {
     document.addEventListener('scroll', handleScrollEvent)
 
     return () => document.removeEventListener('scroll', handleScrollEvent)
-  }, [])
+  })
   return isScroll
 }
 
