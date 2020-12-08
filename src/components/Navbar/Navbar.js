@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import logoImage from '../assets/logo.png'
+import { Link } from 'react-router-dom'
+import logoImage from '../../assets/logo.png'
 
 export const Action = styled.div`
 padding:.7rem 4rem;
@@ -43,7 +44,7 @@ function Navbar () {
           <>Login</>
         </Action>
         <Action>
-          <>Register</>
+          <Link to='/Register'>Register</Link>
         </Action>
       </ActionContainer>
     </Wrapper>
