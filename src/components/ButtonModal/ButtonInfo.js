@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
-import { ContentModal, Title, ButtonClose, HeaderDevice, customStyles, ButtonInfo, TextButton, ContentButtonInfo } from './styled'
-import ModalInfo from '../Modal/ModalInformation'
+import {
+  ContentModal,
+  Title,
+  ButtonClose,
+  HeaderDevice,
+  customStyles,
+  ButtonInfo,
+  TextButton,
+  ContentButtonInfo
+} from './styled'
+import ModalInfo from '../Modal/ModalInfomation'
 import Modal from 'react-modal'
-import { ContentButtonInfo } from '../ButtonModal/styled'
 function ButtonDevice () {
   const [modalIsOpen, setIsOpen] = useState(false)
   const handleOpen = () => {
