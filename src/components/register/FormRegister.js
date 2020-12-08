@@ -123,67 +123,64 @@ function FormRegister (callback) {
   )
 
   return (
-      <Container>
-        <Form onSubmit={handleSubmit}>
-            <Title>Register</Title>
+    <Container>
+      <Form onSubmit={handleSubmit}>
+        <Title>Register</Title>
+        <a>Username</a>
+        <Input
+          type='text'
+          name='username'
+          id='username'
+          placeholder='e.g.JohnDoe'
+          value={values.username}
+          onChange={handleChange}
+        />
+        {/* requires at least 5 letters */}
 
-            <a>Username</a>
-            <Input
-              type ="text"
-              name="username"
-              id="username"
-              placeholder="e.g. JohnDoe"
-              value={values.username}
-              onChange={handleChange}>
-            </Input>
-            {/* requires at least 5 letters */}
+        <a>Email</a>
+        <Input
+          type='text'
+          name='email'
+          id='email'
+          placeholder='e.g. JohnDoe@example.com'
+          value={values.email}
+          onChange={handleChange}
+        />
 
-            <a>Email</a>
-            <Input
-              type ="text"
-              name="email"
-              id="email"
-              placeholder="e.g. JohnDoe@example.com"
-              value={values.email}
-              onChange={handleChange}>
-            </Input>
+        <a>Phone Number</a>
+        <Input
+          type='text'
+          name='phone_number'
+          id='phone_number'
+          placeholder='e.g. 1234567890'
+          value={values.email}
+          onChange={handleChange}
+        />
 
-            <a>Phone Number</a>
-            <Input
-              type ="text"
-              name="phone_number"
-              id="phone_number"
-              placeholder="e.g. 1234567890"
-              value={values.email}
-              onChange={handleChange}>
-            </Input>
+        <a>Password</a>
+        <Input
+          type='password'
+          name='password'
+          id='password'
+          placeholder='Password'
+          value={values.password}
+          onChange={handleChange}
+        />
+        {/* requires at least 8 digits */}
 
-            <a>Password</a>
-            <Input
-              type ="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              value={values.password}
-              onChange={handleChange}>
-            </Input>
-            {/* requires at least 8 digits */}
-
-            <a>Confirm Password</a>
-            <Input
-              type ="password"
-              name="comfirmPassword"
-              id="comfirmPassword"
-              placeholder="Type your password again">
-            </Input>
-
-            <Submit>
-            <Button type ="submit">Submit</Button>
-            <a>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></a>
-            </Submit>
-
-        </Form>
-        </Container>
+        <a>Confirm Password</a>
+        <Input
+          type='password'
+          name='comfirmPassword'
+          id='comfirmPassword'
+          placeholder='Type your password again'
+        />
+        <Submit>
+          <Button type='submit'>Submit</Button>
+          <a>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></a>
+        </Submit>
+      </Form>
+    </Container>
   )
 }
 

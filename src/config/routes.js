@@ -1,27 +1,28 @@
-import { lazy } from "react";
+import { lazy } from 'react'
 
-export default{
-  Home:{
-    path: "/home",
+const routes = {
+  Home: {
+    path: '/home',
     exact: true,
-    component: lazy(()=> import('../pages/Home'))
+    component: lazy(() => import('../pages/Home'))
   },
 
-  Welcome:{
-    path: "/",
+  Welcome: {
+    path: '/',
     exact: true,
-    component: lazy(()=> import('../pages/Welcome'))
+    component: lazy(() => import('../pages/Welcome'))
   },
 
-  Login:{
-    path: "/login",
+  Login: {
+    path: '/login',
     exact: true,
-    component: lazy(()=> import('../pages/Login'))
+    component: lazy(() => import('../pages/Login'))
   },
 
-  Register:{
-    path: "/register",
+  Register: {
+    path: '/register',
     exact: true,
-    component: lazy(()=> import('../pages/Register'))
+    component: lazy(() => import('../pages/Register'))
   }
 }
+export default routes
