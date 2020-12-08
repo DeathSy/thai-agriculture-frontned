@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext, createContext, useCallback } from 'react'
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  useCallback
+} from 'react'
 
 export const ActionContext = createContext({})
 
@@ -12,22 +18,41 @@ function Provider ({ children }) {
   }, [currentUsername])
 
   return (
-    <ActionContext.Provider value={{ isLogin, setIsLogin, currentUsername, setCurrentUsername, userId, setUserId}}>
+    <ActionContext.Provider
+      value={{
+        isLogin,
+        setIsLogin,
+        currentUsername,
+        setCurrentUsername,
+        userId,
+        setUserId
+      }}
+    >
       {children}
     </ActionContext.Provider>
   )
 }
 
-export function useLogin() {
-  const { isLogin, setIsLogin , currentUsername, setCurrentUsername, userId, setUserId} = useContext(ActionContext)
+export function useLogin () {
+  const {
+    isLogin,
+    setIsLogin,
+    currentUsername,
+    setCurrentUsername,
+    userId,
+    setUserId
+  } = useContext(ActionContext)
 
-  const handleLogin = useCallback((username, userId) => {
-    setIsLogin(true)
-    setCurrentUsername(username)
-    setUserId(userId)
-  }, [setCurrentUsername, setIsLogin, setUserId])
+  const handleLogin = useCallback(
+    (username, userId) => {
+      setIsLogin(true)
+      setCurrentUsername(username)
+      setUserId(userId)
+    },
+    [setCurrentUsername, setIsLogin, setUserId]
+  )
 
-  return [{ isLogin, currentUsername, userId}, { handleLogin}]
+  return [{ isLogin, currentUsername, userId }, { handleLogin }]
 }
 
-export default Provider 
+export default Provider
