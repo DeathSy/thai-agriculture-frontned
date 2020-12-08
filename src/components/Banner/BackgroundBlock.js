@@ -24,11 +24,9 @@ const BackgroundOverylay = styled.div`
 `
 function BackgroundBlock ({ src, height = 100, children }) {
   return (
-    <div>
-      <BackgroundImage src={src} height={height}>
-        <BackgroundOverylay>{children}</BackgroundOverylay>
-      </BackgroundImage>
-    </div>
+    <BackgroundImage src={src} height={height}>
+      <BackgroundOverylay>{children}</BackgroundOverylay>
+    </BackgroundImage>
   )
 }
 export default BackgroundBlock

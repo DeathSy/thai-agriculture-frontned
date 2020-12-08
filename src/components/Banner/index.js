@@ -16,13 +16,11 @@ const Bannerimg = styled.div`
 
 function Banner () {
   return (
-    <div>
-      <Container>
-        <Bannerimg>
-          <BackgroundBlock src={Img} />
-        </Bannerimg>
-      </Container>
-    </div>
+    <Container>
+      <Bannerimg>
+        <BackgroundBlock src={Img} />
+      </Bannerimg>
+    </Container>
   )
 }
 

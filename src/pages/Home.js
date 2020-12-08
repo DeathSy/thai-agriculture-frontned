@@ -12,12 +12,10 @@ const Container = styled.div`
 
 function Home () {
   return (
-    <div>
-      <Container>
-        <Banner />
-        <Content />
-      </Container>
-    </div>
+    <Container>
+      <Banner />
+      <Content />
+    </Container>
   )
 }
 

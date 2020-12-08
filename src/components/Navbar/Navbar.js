@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Imglogo from '../../assets/logo.png'
+import useScroll from '../../util/useScroll'
 
 export const Action = styled.div`
   padding: 0.7rem 4rem;
@@ -34,20 +35,20 @@ export const ActionContainer = styled.div`
 `
 
 function Navbar () {
+  const isScroll = useScroll({ scrollRange: 20 })
+
   return (
-    <>
-      <Wrapper>
-        <Logo src={Imglogo} />
-        <ActionContainer>
-          <Action>
-            <>Login</>
-          </Action>
-          <Action>
-            <>Register</>
-          </Action>
-        </ActionContainer>
-      </Wrapper>
-    </>
+    <Wrapper isScroll={isScroll}>
+      <Logo src={Imglogo} />
+      <ActionContainer>
+        <Action>
+          <>Login</>
+        </Action>
+        <Action>
+          <>Register</>
+        </Action>
+      </ActionContainer>
+    </Wrapper>
   )
 }
 

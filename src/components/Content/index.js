@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 import AddInfo from '../ButtonModal/ButtonInfo'
@@ -34,6 +34,13 @@ const AddDevice = styled.div`
     margin-left: 2rem;
   }
 `
+const WrapperBox = styled.div`
+  width: 70vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
 const Box = styled.div`
   width: 18vw;
   height: 20vh;
@@ -43,33 +50,44 @@ const Box = styled.div`
   margin-left: 2rem;
   margin-right: 1.5rem;
 `
-
-const WrapperBox = styled.div`
-  width: 70vw;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+const Close = styled.div`
+  width: 98%;
+  height: 25px;
+  display:flex;
+  justify-content:flex-end;
+  padding-top:0.3rem;
+  
+ 
 `
 
-function Contenst () {
+function Content () {
+  const [close, setClose] = useState(false)
+  const handleClose = () => setClose(true)
+  console.log(close)
   return (
-    <div>
+    <>
       <Container>
         <h1>WELLCOME</h1>
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
-            <Box />
-            <Box />
-            <Box />
-            <AddInfo />
+            {close === (true)
+              ? null
+              : (
+                <Box>
+                  <Close>
+                    <button onClick={handleClose} type='button'>
+                      x
+                    </button>
+                  </Close>
+                </Box>
+                )}
           </WrapperBox>
         </AddDevice>
         <ButtonAddDevice />
       </Container>
-    </div>
+    </>
   )
 }
 
-export default Contenst
+export default Content

@@ -15,11 +15,7 @@ export const InputDevice = styled.input`
   }
 `
 export const ContentMinMax = styled.div``
-export const ContentSelect = {
-  select: {
-
-  }
-}
+export const ContentSelect = {}
 // export const customStyles = {
 //   option: (provided, state) => ({
 //     ...provided,
