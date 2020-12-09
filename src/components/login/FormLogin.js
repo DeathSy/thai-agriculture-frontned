@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link, useHistory } from 'react-router-dom'
-import { getAccount } from '../../services/fetchData'
-import { useLogin } from '../../contexts/ActionContext'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
     height: 500px;
@@ -93,8 +91,6 @@ const Register = styled.button`
 function FormLogin () {
   const [inputUsername, setInputUsername] = useState('')
   const [inputPassword, setInputPassword] = useState('')
-  const [{ handleLogin }] = useLogin()
-  const history = useHistory()
   const handleOnInputUsername = e => setInputUsername(e.target.value)
   const handleOnInputPassword = e => setInputPassword(e.target.value)
 
@@ -105,13 +101,6 @@ function FormLogin () {
   }
   const handleOnSubmit = async () => {
     if (inputUsername !== '' && inputPassword !== '') {
-      await getAccount(inputUsername, inputPassword).then(response => {
-        console.log(response.data.user.username)
-        handleLogin(response.data.user.username, response.data.user.user_id)
-      })
-      history.push('/')
-    } else {
-      alert('Fail')
     }
   }
 

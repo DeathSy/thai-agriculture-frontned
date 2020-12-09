@@ -6,9 +6,7 @@ import BannerBlock from '../components/Bannerblock'
 function Register () {
   return (
     <div>
-      <BannerBlock src={backgroundImage}>
-        <FormRegister />
-      </BannerBlock>
+      <BannerBlock src={backgroundImage} />
     </div>
   )
 }
