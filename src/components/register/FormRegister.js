@@ -153,7 +153,7 @@ function FormRegister (callback) {
           name='phone_number'
           id='phone_number'
           placeholder='e.g. 1234567890'
-          value={values.email}
+          value={values.phone_number}
           onChange={handleChange}
         />
 
