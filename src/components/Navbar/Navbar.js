@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Logo from './Logo'
 import Imglogo from '../../assets/logo.png'
 import useScroll from '../../util/useScroll'
+import { Link } from 'react-router-dom'
 
 export const Action = styled.div`
   padding: 0.7rem 4rem;
