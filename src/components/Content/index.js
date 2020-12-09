@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
-  background-color: blue;
+  background-color: #fff;
 
   h1 {
     font-weight: 600;
@@ -22,10 +22,11 @@ const Container = styled.div`
 const AddDevice = styled.div`
   width: 70vw;
   height: 50vh;
-  background-color: yellowgreen;
+  background-color: #fff;
   border-radius: 10px;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
+  border:2px solid black;
 
   h2 {
     font-size: 1rem;

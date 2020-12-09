@@ -49,7 +49,7 @@ export const ContentButtonDevice = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 3rem;
 `
 // End-Button-Device
 

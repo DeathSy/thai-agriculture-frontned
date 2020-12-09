@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar/Navbar'
 const Container = styled.div`
   width: 100vw;
   height: 200vh;
-  background-color: firebrick;
+  background-color: #fff;
 `
 
 function Home () {
