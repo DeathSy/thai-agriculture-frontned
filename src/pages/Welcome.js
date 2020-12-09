@@ -5,9 +5,9 @@ import BannerBlock from '../components/Bannerblock'
 
 function Register () {
   return (
-    <div>
+    <>
       <BannerBlock src={backgroundImage} />
-    </div>
+    </>
   )
 }
 export default withHelmet('AgroGreen')(Register)

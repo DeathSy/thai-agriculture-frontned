@@ -3,21 +3,21 @@ import withHelmet from '../util/withHelmet'
 import styled from 'styled-components'
 import Banner from '../components/Banner/index'
 import Content from '../components/Content/index'
+import Navbar from '../components/Navbar/Navbar'
 
 const Container = styled.div`
-  width:100vw;
+  width: 100vw;
   height: 200vh;
-  background-color:firebrick;
+  background-color: #fff;
 `
 
 function Home () {
   return (
-    <div>
-      <Container>
-        <Banner />
-        <Content />
-      </Container>
-    </div>
+    <Container>
+      <Navbar />
+      <Banner />
+      <Content />
+    </Container>
   )
 }
 
