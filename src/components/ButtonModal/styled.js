@@ -44,7 +44,7 @@ export const ButtonOpenDevice = styled.button`
   border: none;
   background-color:#10C18b;
   color: #fff;
-  : hover {
+  :hover {
     background-color: #00a472;
   }
 `
@@ -52,7 +52,6 @@ export const ContentButtonDevice = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
 `
 // End-Button-Device
 
