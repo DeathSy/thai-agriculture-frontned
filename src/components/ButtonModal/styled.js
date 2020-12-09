@@ -44,6 +44,9 @@ export const ButtonOpenDevice = styled.button`
   border: none;
   background-color:#10C18b;
   color: #fff;
+  : hover {
+    background-color: #00a472;
+  }
 `
 export const ContentButtonDevice = styled.div`
   display: flex;
