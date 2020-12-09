@@ -22,7 +22,7 @@ const BackgroundOverylay = styled.div`
   justify-content: center;
   align-items: center;
 `
-function BackgroundBlock ({ src, height = 100, children }) {
+function BackgroundBlock ({ src, height = 40, children }) {
   return (
     <BackgroundImage src={src} height={height}>
       <BackgroundOverylay>{children}</BackgroundOverylay>
