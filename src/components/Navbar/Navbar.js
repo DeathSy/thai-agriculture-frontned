@@ -29,11 +29,11 @@ export const Wrapper = styled.div`
   flex: 1;
   justify-content: space-between;
   width: 100%;
-  position: fixed;
   z-index: 1000;
-  background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
-  color: ${props => (props.isScroll ? '#000' : '#fff')};
-  transition: background-color 0.5;
+  background-color:#FFFF;
+  position:fixed;
+  color: #fff;
+  box-shadow:4px 4px 8px 5px #ccc;
 `
 
 export const ActionContainer = styled.div`
