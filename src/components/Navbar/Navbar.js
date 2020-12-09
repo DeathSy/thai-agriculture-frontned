@@ -4,29 +4,40 @@ import Logo from './Logo'
 import Imglogo from '../../assets/logo.png'
 import useScroll from '../../util/useScroll'
 import { Link } from 'react-router-dom'
+import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 
 export const Action = styled.div`
-  padding: 0.7rem 4rem;
-  margin: 0 0.5rem;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: #10c18b;
+  color: #fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-left:1rem;
   :hover {
     background-color: #00a472;
-    border-radius: 60px;
   }
 `
 
 export const Wrapper = styled.div`
   display: flex;
   flex: 1;
-  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  position: fixed;
   z-index: 1000;
-  background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
-  color: ${props => (props.isScroll ? '#000' : '#fff')};
-  transition: background-color 0.5;
+  background-color:#FFFF;
+  position:fixed;
+  color: #fff;
+  box-shadow:4px 4px 8px 5px #ccc;
 `
 
 export const ActionContainer = styled.div`
+  width: 50%;
   display: flex;
   flex: 1;
   justify-content: flex-end;
@@ -40,9 +51,7 @@ function Navbar () {
   if (i === 1) {
     return (
       <Wrapper isScroll={isScroll}>
-        <Link to='/Home'>
-          <Logo src={Imglogo} />
-        </Link>
+        <Logo src={Imglogo} />
         <ActionContainer>
           <Action>
             <Link to='/Login'>Login</Link>
@@ -56,16 +65,10 @@ function Navbar () {
   } else {
     return (
       <Wrapper isScroll={isScroll}>
-        <Link to='/Home'>
-          <Logo src={Imglogo} />
-        </Link>
+        <Logo src={Imglogo} />
         <ActionContainer>
-          <Action>
-            <>Add Device</>
-          </Action>
-          <Action>
-            <>Logout</>
-          </Action>
+          <ButtonAddDevice />
+          <Action>Logout</Action>
         </ActionContainer>
       </Wrapper>
     )

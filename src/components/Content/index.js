@@ -13,6 +13,7 @@ const Container = styled.div`
   padding-top: 3rem;
   background-color: #fff;
 
+
   h1 {
     font-weight: 600;
     font-size: 1.5rem;
@@ -27,7 +28,7 @@ const AddDevice = styled.div`
   padding-top: 1.5rem;
   padding-left: 1.5rem;
   border:2px solid black;
-
+  margin-bottom:3rem;
   h2 {
     font-size: 1rem;
     font-weight: 550;
