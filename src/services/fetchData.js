@@ -1,4 +1,3 @@
-
 // import axios from 'axios'
 
 // const API_END = 'http://localhost:3333'
@@ -30,8 +29,8 @@
 //       headers: { ...JSON_HEADER },
 //       data: JSON.stringify({
 //         username: username,
-//         password: password 
+//         password: password
 //       })
 //     }
 //   ).then(response => response)
-// }
+//  }

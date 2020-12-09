@@ -1,5 +1,13 @@
 import React, { useState } from 'react'
-import { ContentModal, Title, ButtonClose, HeaderDevice, customStyles, ButtonOpenDevice, ContentButtonDevice } from './styled'
+import {
+  ContentModal,
+  Title,
+  ButtonClose,
+  HeaderDevice,
+  customStyles,
+  ButtonOpenDevice,
+  ContentButtonDevice
+} from './styled'
 import ModalDevice from '../Modal/ModalAddDevice'
 import Modal from 'react-modal'
 function ButtonDevice () {

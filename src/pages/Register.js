@@ -8,7 +8,7 @@ function Register () {
   return (
     <div>
       <BannerBlock src={backgroundImage}>
-      <FormRegister/>
+        <FormRegister />
       </BannerBlock>
     </div>
   )

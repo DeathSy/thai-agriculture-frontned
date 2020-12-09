@@ -8,7 +8,7 @@ function Login () {
   return (
     <div>
       <BannerBlock src={backgroundImage}>
-      <FormLogin/>
+        <FormLogin />
       </BannerBlock>
     </div>
   )
