@@ -35,17 +35,19 @@ export const ActionContainer = styled.div`
 
 function Navbar () {
   const isScroll = useScroll({ scrollRange: 20 })
-  const i = 1
-  if (i === 2) {
+  const i = 0
+  if (i === 1) {
     return (
       <Wrapper isScroll={isScroll}>
-        <Logo src={Imglogo} />
+        <Link to='/Home'>
+          <Logo src={Imglogo} />
+        </Link>
         <ActionContainer>
           <Action>
-            <>Login</>
+            <Link to='/Login'>Login</Link>
           </Action>
           <Action>
-            <>Register</>
+            <Link to='/Register'>Register</Link>
           </Action>
         </ActionContainer>
       </Wrapper>
@@ -53,7 +55,9 @@ function Navbar () {
   } else {
     return (
       <Wrapper isScroll={isScroll}>
-        <Logo src={Imglogo} />
+        <Link to='/Home'>
+          <Logo src={Imglogo} />
+        </Link>
         <ActionContainer>
           <Action>
             <>Add Device</>
