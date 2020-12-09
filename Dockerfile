@@ -8,7 +8,11 @@ WORKDIR /app
 COPY ./package.json /app/package.json
 COPY ./yarn.lock /app/yarn.lock
 
-RUN yarn install && yarn build
+RUN yarn install
+
+COPY . /app
+
+RUN yarn build
 
 FROM nginx:1.19.5-alpine
 
