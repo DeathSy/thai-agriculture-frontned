@@ -54,7 +54,7 @@ align-items:center;
 `
 
 function Contenst () {
-  const [data, SetData] = React.useState()
+  const [SetData] = React.useState()
   React.useEffect(() => {
     fetchDataById('IMEU001').then(response => response.json()).then(response => response.data).then(response => SetData(response))
   }, [])
@@ -63,7 +63,6 @@ function Contenst () {
     <div>
       <Container>
         <h1>WELLCOME</h1>
-        {data?.map((item, index) => (<p>item. </p>))}
 
         <AddDevice>
           <h2>Device Name 1</h2>
