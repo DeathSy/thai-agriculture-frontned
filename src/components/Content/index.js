@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 import AddInfo from '../ButtonModal/ButtonInfo'
+import { fetchDataById } from '../../services/fetchData'
 
 const Container = styled.div`
   width: 100vw;
@@ -37,6 +38,7 @@ const AddDevice = styled.div`
   }
 `
 const WrapperBox = styled.div`
+  display: flex;
   width: 70vw;
   height: auto;
   display: flex;
@@ -44,6 +46,7 @@ const WrapperBox = styled.div`
   align-items: center;
 `
 const Box = styled.div`
+  flex : 1;
   width: 18vw;
   height: 20vh;
   background-color: blue;
@@ -61,9 +64,13 @@ const Close = styled.div`
 `
 
 function Content () {
-  const [close, setClose] = useState(false)
-  const handleClose = () => setClose(true)
-  console.log(close)
+  const dogetoken = 'd3e0ba358160b45d3344cfffa1b014542Yd1NyQr5vwJQ6bHRNyVyvttYr0fib+qmNUSmNr/xzQ/wJJsvDAUzdUotmCZQZPA'
+  const dogeID = '4fbe826e-1b5e-4367-b2f8-4b0b33e3eb18'
+  const [dataDevice, setDataDevice] = useState()
+  React.useEffect(() => {
+    fetchDataById(dogetoken, dogeID).then(response => setDataDevice(response))
+  }, [])
+  console.log(dataDevice)
   return (
     <>
       <Container>
@@ -71,17 +78,13 @@ function Content () {
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
-            {close === (true)
-              ? null
-              : (
-                <Box>
-                  <Close>
-                    <button onClick={handleClose} type='button'>
-                      x
-                    </button>
-                  </Close>
-                </Box>
-                )}
+            {dataDevice?.status}
+            {dataDevice?.result.sensors.map((item) => <Box key={item._id}>vaule = {item.raw.value}</Box>)}
+            <Close>
+              <button type='button'>
+                x
+              </button>
+            </Close>
             <AddInfo />
           </WrapperBox>
         </AddDevice>
