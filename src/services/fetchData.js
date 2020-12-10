@@ -1,5 +1,5 @@
 // fetch get data by Id device
-export async function fetchDataById (tokenUser, device) {
+export async function fetchDataById (tokenUser, idDevice) {
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -7,11 +7,11 @@ export async function fetchDataById (tokenUser, device) {
       Authorization: `Bearer ${tokenUser}`
     }
   }
-  return fetch(`http://0.0.0.0:333 3/api/v1/_null_/${id_device}`, requestOptions)
+  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${idDevice}`, requestOptions)
     .then(response => response.json())
 }
 // fetch get device by id user
-export async function fetchDeviceById (tokenUser, id_user) {
+export async function fetchDeviceById (tokenUser, idUser) {
   const requestOptions = {
     method: 'GET',
     headers: {
@@ -19,6 +19,6 @@ export async function fetchDeviceById (tokenUser, id_user) {
       Authorization: `Bearer ${tokenUser}`
     }
   }
-  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${id_user}`, requestOptions)
+  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${idUser}`, requestOptions)
     .then(response => response.json())
 }

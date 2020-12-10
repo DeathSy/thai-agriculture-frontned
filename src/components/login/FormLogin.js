@@ -101,6 +101,7 @@ function FormLogin () {
   }
   const handleOnSubmit = async () => {
     if (inputUsername !== '' && inputPassword !== '') {
+      console.log('Doge')
     }
   }
 
@@ -108,7 +109,7 @@ function FormLogin () {
     <Container>
       <Form>
         <Title>Login</Title>
-        <a>Username</a>
+        <p>Username</p>
         <Input
           type='text'
           name='username'
@@ -117,7 +118,7 @@ function FormLogin () {
           onChange={handleOnInputUsername}
           onKeyDown={handleKeyPress}
         />
-        <a>Password</a>
+        <p>Password</p>
         <Input
           type='password'
           name='password'
@@ -128,7 +129,7 @@ function FormLogin () {
         />
         <Submit>
           <Login type='submit' onClick={handleOnSubmit}>Login</Login>
-          <a>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></a>
+          <p>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></p>
         </Submit>
       </Form>
     </Container>

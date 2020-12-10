@@ -5,7 +5,7 @@ import Img from '../../assets/bg4.jpg'
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 40vh;
   background-color: red;
 `
 const Bannerimg = styled.div`

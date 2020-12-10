@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { fetchDataById } from '../../services/fetchData'
+import ButtonAddDevice from '../ButtonModal/ButtonDevice'
+import AddInfo from '../ButtonModal/ButtonInfo'
 
 const Container = styled.div`
   width: 100vw;
@@ -10,71 +12,89 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
-  background-color:blue;
+  background-color: #fff;
 
-  h1{
-    font-weight:600;
-    font-size:1.5rem;
-    padding-bottom:3rem;
+
+  h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
   }
 `
 const AddDevice = styled.div`
   width: 70vw;
   height: 50vh;
-  background-color: yellowgreen;
+  background-color: #fff;
   border-radius: 10px;
-  padding-top:1.5rem;
-  padding-left:1.5rem;
-
-  h2{
-    font-size:1rem;
-    font-weight:550;
-    padding-bottom:1.5rem;
-    margin-left:2rem;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  border:2px solid black;
+  margin-bottom:3rem;
+  h2 {
+    font-size: 1rem;
+    font-weight: 550;
+    padding-bottom: 1.5rem;
+    margin-left: 2rem;
   }
+`
+const WrapperBox = styled.div`
+  width: 70vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `
 const Box = styled.div`
   width: 18vw;
   height: 20vh;
   background-color: blue;
   border-radius: 10px;
-  margin-bottom:1.5rem;
-  margin-left:2rem;
-  margin-right:1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 1.5rem;
+`
+const Close = styled.div`
+  width: 98%;
+  height: 25px;
+  display:flex;
+  justify-content:flex-end;
+  padding-top:0.3rem;
 `
 
-const WrapperBox = styled.div`
-width: 70vw;
-height: auto;
-display:flex;
-flex-direction:row;
-align-items:center;
-
-
-`
-
-function Contenst () {
+function Content () {
   const [SetData] = React.useState()
   React.useEffect(() => {
     fetchDataById('IMEU001').then(response => response.json()).then(response => response.data).then(response => SetData(response))
   }, [])
-
+  const [close, setClose] = useState(false)
+  const handleClose = () => setClose(true)
+  console.log(close)
   return (
-    <div>
+    <>
       <Container>
         <h1>WELLCOME</h1>
 
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
-            <Box />
-            <Box />
-            <Box />
+            {close === (true)
+              ? null
+              : (
+                <Box>
+                  <Close>
+                    <button onClick={handleClose} type='button'>
+                      x
+                    </button>
+                  </Close>
+                </Box>
+                )}
+            <AddInfo />
           </WrapperBox>
         </AddDevice>
+        <ButtonAddDevice />
       </Container>
-    </div>
+    </>
   )
 }
 
-export default Contenst
+export default Content
