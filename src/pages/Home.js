@@ -3,7 +3,7 @@ import withHelmet from '../util/withHelmet'
 import styled from 'styled-components'
 import Banner from '../components/Banner/index'
 import Content from '../components/Content/index'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../components/Navbar'
 
 const Container = styled.div`
   width: 100vw;
