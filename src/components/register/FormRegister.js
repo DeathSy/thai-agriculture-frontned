@@ -126,7 +126,7 @@ function FormRegister (callback) {
     <Container>
       <Form onSubmit={handleSubmit}>
         <Title>Register</Title>
-        <a>Username</a>
+        <p>Username</p>
         <Input
           type='text'
           name='username'
@@ -137,7 +137,7 @@ function FormRegister (callback) {
         />
         {/* requires at least 5 letters */}
 
-        <a>Email</a>
+        <p>Email</p>
         <Input
           type='text'
           name='email'
@@ -147,7 +147,7 @@ function FormRegister (callback) {
           onChange={handleChange}
         />
 
-        <a>Phone Number</a>
+        <p>Phone Number</p>
         <Input
           type='text'
           name='phone_number'
@@ -157,7 +157,7 @@ function FormRegister (callback) {
           onChange={handleChange}
         />
 
-        <a>Password</a>
+        <p>Password</p>
         <Input
           type='password'
           name='password'
@@ -168,7 +168,7 @@ function FormRegister (callback) {
         />
         {/* requires at least 8 digits */}
 
-        <a>Confirm Password</a>
+        <p>Confirm Password</p>
         <Input
           type='password'
           name='comfirmPassword'
@@ -177,7 +177,7 @@ function FormRegister (callback) {
         />
         <Submit>
           <Button type='submit'>Submit</Button>
-          <a>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></a>
+          <p>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></p>
         </Submit>
       </Form>
     </Container>
