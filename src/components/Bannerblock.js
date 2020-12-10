@@ -7,8 +7,7 @@ const BackgroundImage = styled.div`
   background-image: url(${props => props.src});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: -20px;
-
+  background-position-y: -206px;
   position: relative;
 `
 
@@ -16,11 +15,9 @@ const BackgroundOverlay = styled.div`
   position: absolute;
   width: 100%; 
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: rgba(0,0,0,0.2);
 `
 
