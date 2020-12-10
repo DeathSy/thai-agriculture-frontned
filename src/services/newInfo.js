@@ -1,5 +1,5 @@
 //setting default data device
-export async function createDevice(tokenUser,value) {
+export async function createDeviceSetting(tokenUser,value) {
   const requestOptions = {
     method: 'POST',
     headers: {

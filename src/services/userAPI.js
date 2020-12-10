@@ -1,5 +1,5 @@
 //create user 
-export async function createDevice(value) {
+export async function register(value) {
   const requestOptions = {
     method: 'POST',
     headers: {
@@ -16,7 +16,7 @@ export async function createDevice(value) {
 }
 
 //login
-export async function createDevice(tokenUser,value) {
+export async function login(value) {
   const requestOptions = {
     method: 'POST',
     headers: {
