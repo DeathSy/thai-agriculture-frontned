@@ -7,7 +7,7 @@ export async function fetchDataById (tokenUser, idDevice) {
       Authorization: `Bearer ${tokenUser}`
     }
   }
-  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${idDevice}`, requestOptions)
+  return fetch(`https://worawanbydiistudent.store/api/v1/${idDevice}/t/latest`, requestOptions)
     .then(response => response.json())
 }
 // fetch get device by id user
