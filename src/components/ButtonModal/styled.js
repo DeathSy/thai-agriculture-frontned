@@ -44,6 +44,7 @@ export const ButtonOpenDevice = styled.button`
   border: none;
   background-color:#10C18b;
   color: #fff;
+  font-family: 'Signika', sans-serif;
   :hover {
     background-color: #00a472;
   }
@@ -52,6 +53,7 @@ export const ContentButtonDevice = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `
 // End-Button-Device
 
