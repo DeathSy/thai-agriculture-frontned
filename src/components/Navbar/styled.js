@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   z-index: 1000;
-  background-color:#FFFF;
-  position:fixed;
+  background-color: #ffff;
+  position: fixed;
   color: #fff;
-  box-shadow:4px 4px 8px 5px #ccc;
+  box-shadow: 4px 4px 6px 2px #c0c0c0;
+  font-family: 'Signika', sans-serif;
 `
 
 export const ActionContainer = styled.div`
@@ -29,10 +30,10 @@ export const Action = styled.div`
   border: none;
   background-color: #10c18b;
   color: #fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-left:1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
   :hover {
     background-color: #00a472;
   }

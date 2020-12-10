@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root {
     height: 100vh;
     width: 100vw;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 20px;
     list-style: none;
     overflow-x: hidden;
