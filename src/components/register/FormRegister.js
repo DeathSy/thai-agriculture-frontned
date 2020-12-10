@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import RegisterAPI from '../../services/registerAPI'
 
 const Container = styled.div`
     height: 600px;
@@ -108,6 +109,7 @@ function FormRegister (callback) {
   const handleSubmit = e => {
     e.preventDefault()
     console.log(values, '1')
+    RegisterAPI(values)
     // console.log(values)
   }
 

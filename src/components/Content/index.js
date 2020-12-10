@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { fetchDataById } from '../../services/fetchData'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 import AddInfo from '../ButtonModal/ButtonInfo'
 
@@ -62,10 +61,6 @@ const Close = styled.div`
 `
 
 function Content () {
-  const [SetData] = React.useState()
-  React.useEffect(() => {
-    fetchDataById('IMEU001').then(response => response.json()).then(response => response.data).then(response => SetData(response))
-  }, [])
   const [close, setClose] = useState(false)
   const handleClose = () => setClose(true)
   console.log(close)
@@ -73,7 +68,6 @@ function Content () {
     <>
       <Container>
         <h1>WELLCOME</h1>
-
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>

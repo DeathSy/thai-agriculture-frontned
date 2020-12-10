@@ -8,7 +8,6 @@ export const HeaderDevice = styled.div`
 export const Title = styled.h1`
   font-size: 1.5rem;
 `
-export const Title = styled.h1``
 export const ButtonClose = styled.button`
   cursor: pointer;
   border: none;
