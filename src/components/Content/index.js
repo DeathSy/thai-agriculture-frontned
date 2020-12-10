@@ -13,11 +13,12 @@ const Container = styled.div`
   padding-top: 3rem;
   background-color: #fff;
 
-
   h1 {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding-bottom: 3rem;
+    font-family: 'Cabin', sans-serif; 
+    letter-spacing:10px;
   }
 `
 const AddDevice = styled.div`
@@ -27,10 +28,10 @@ const AddDevice = styled.div`
   border-radius: 10px;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
-  border:2px solid black;
+  border:4px solid black;
   margin-bottom:3rem;
   h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 550;
     padding-bottom: 1.5rem;
     margin-left: 2rem;
@@ -46,11 +47,21 @@ const WrapperBox = styled.div`
 const Box = styled.div`
   width: 18vw;
   height: 20vh;
-  background-color: blue;
+  border:4px solid #e0e0e0;
   border-radius: 10px;
   margin-bottom: 1.5rem;
   margin-left: 2rem;
   margin-right: 1.5rem;
+  h1{
+    letter-spacing:1px;
+    display:flex;
+    justify-content:center;
+     
+  }
+  p{
+    margin-top:-1rem;
+    margin-left:0.5rem;
+  }
 `
 const Close = styled.div`
   width: 98%;
@@ -67,7 +78,7 @@ function Content () {
   return (
     <>
       <Container>
-        <h1>WELLCOME</h1>
+        <h1>WELCOME</h1>
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
@@ -80,6 +91,8 @@ function Content () {
                       x
                     </button>
                   </Close>
+                  <p>Temperature</p>
+                  <h1>28 °C</h1>
                 </Box>
                 )}
             <AddInfo />
