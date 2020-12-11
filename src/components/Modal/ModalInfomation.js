@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  ContentDetail,
+  ContentInfo,
   ContentSelect,
   TextTitle,
   ContentMinMax,
@@ -22,7 +22,7 @@ const options = [
 function ModalAddDevice () {
   return (
     <>
-      <ContentDetail>
+      <ContentInfo>
         <ContentSelect>
           <TextTitle>Device ID</TextTitle>
           <Select styles={customStyles} options={options} />
@@ -33,7 +33,7 @@ function ModalAddDevice () {
           <TextTitle>Minimum range</TextTitle>
           <InputInfomation type='number' />
         </ContentMinMax>
-      </ContentDetail>
+      </ContentInfo>
       <FooterDevice>
         <ButtonAdd>Add</ButtonAdd>
       </FooterDevice>

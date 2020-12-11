@@ -1,5 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import {
+  Title,
+  ButtonClose,
+  HeaderDevice,
+  customStyles
+} from '../ButtonModal/styled'
+import { TextTitle, InputInfomation } from '../Modal/styled'
+import Modal from 'react-modal'
 
 const BackgroundImage = styled.div`
   height: ${props => props.height}vh;
@@ -10,7 +18,7 @@ const BackgroundImage = styled.div`
   background-position: center;
   position: relative;
   z-index: 11;
-  margin-bottom:0.5rem;
+  margin-bottom: 0.5rem;
   margin-left: 1rem;
 `
 const BackgroundOverylay = styled.div`
@@ -25,13 +33,35 @@ const BackgroundOverylay = styled.div`
   justify-content: center;
   align-items: center;
 `
+const ContentMinMaxEdit = styled.div`
+ 
+`
 function BackgroundBlock ({ src, height = 4.1, children }) {
+  const [modalIsOpen, setIsOpen] = useState(false)
+  const handleOpen = () => {
+    setIsOpen(true)
+  }
+  const handleClose = () => {
+    setIsOpen(false)
+  }
   return (
-    <div>
+    <>
       <BackgroundImage src={src} height={height}>
-        <BackgroundOverylay>{children}</BackgroundOverylay>
+        <BackgroundOverylay onClick={handleOpen}>{children}</BackgroundOverylay>
       </BackgroundImage>
-    </div>
+      <Modal isOpen={modalIsOpen} style={customStyles}>
+        <HeaderDevice>
+          <Title>Edit Infomation</Title>
+          <ButtonClose onClick={handleClose}>x</ButtonClose>
+        </HeaderDevice>
+        <ContentMinMaxEdit>
+          <TextTitle>Maximum range</TextTitle>
+          <InputInfomation type='number' />
+          <TextTitle>Minimum range</TextTitle>
+          <InputInfomation type='number' />
+        </ContentMinMaxEdit>
+      </Modal>
+    </>
   )
 }
 export default BackgroundBlock
