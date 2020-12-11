@@ -49,6 +49,8 @@ const WrapperBox = styled.div`
   align-items: center;
   display: inline-block;
 `
+const Close = styled.div`
+`
 const Box = styled.div`
   width: 250px;
   height: 150px;
@@ -71,16 +73,16 @@ const Box = styled.div`
     margin-left: 0.5rem;
   }
 `
-const Edit = styled.div`
-  width: 98%;
-  height: 25px;
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 0.3rem;
-`
-const ButtonWrapper = styled.div`
-  margin-bottom: 5rem;
-`
+// const Edit = styled.div`
+//   width: 98%;
+//   height: 25px;
+//   display: flex;
+//   justify-content: flex-end;
+//   padding-top: 0.3rem;
+// `
+// const ButtonWrapper = styled.div`
+//   margin-bottom: 5rem;
+// `
 
 function Content () {
   const dogetoken =
