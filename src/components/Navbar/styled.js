@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   background-color: #ffff;
   position: fixed;
   color: #fff;
-  box-shadow: 4px 4px 6px 2px #c0c0c0;
+  box-shadow: 4px 4px 6px 2px rgba(0, 0, 0, 0.2);
   font-family: 'Signika', sans-serif;
 `
 

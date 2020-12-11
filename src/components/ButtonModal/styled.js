@@ -32,11 +32,12 @@ export const TextButton = styled.h3`
   color: #10c18b;
 `
 export const ContentButtonInfo = styled.div`
+  width: 250px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 10%;
 `
 // End-Button-Infromation
 
@@ -59,7 +60,6 @@ export const ContentButtonDevice = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
 `
 // End-Button-Device
 
