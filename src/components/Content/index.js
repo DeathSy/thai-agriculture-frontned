@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 import AddInfo from '../ButtonModal/ButtonInfo'
+import Editbutton from './Editbutton'
+import Img from '../../assets/edit.png'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   width: 100vw;
@@ -17,8 +20,8 @@ const Container = styled.div`
     font-weight: 600;
     font-size: 2rem;
     padding: 3rem 0;
-    font-family: 'Cabin', sans-serif; 
-    letter-spacing:10px;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 10px;
   }
 `
 const AddDevice = styled.div`
@@ -28,8 +31,8 @@ const AddDevice = styled.div`
   border-radius: 10px;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
-  border:4px solid black;
-  margin-bottom:3rem;
+  border: 4px solid black;
+  margin-bottom: 3rem;
   h2 {
     font-size: 1.5rem;
     font-weight: 550;
@@ -47,34 +50,30 @@ const WrapperBox = styled.div`
 const Box = styled.div`
   width: 18vw;
   height: 20vh;
-  border:4px solid #e0e0e0;
+  border: 4px solid #e0e0e0;
   border-radius: 10px;
   margin-bottom: 1.5rem;
   margin-left: 2rem;
   margin-right: 1.5rem;
-  h1{
-    letter-spacing:1px;
-    display:flex;
-    justify-content:center;
-     
+  h1 {
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
   }
-  p{
-    margin-top:-1rem;
-    margin-left:0.5rem;
+  p {
+    margin-top: -1rem;
+    margin-left: 0.5rem;
   }
 `
 const Close = styled.div`
   width: 98%;
   height: 25px;
-  display:flex;
-  justify-content:flex-end;
-  padding-top:0.3rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.3rem;
 `
 
 function Content () {
-  const [close, setClose] = useState(false)
-  const handleClose = () => setClose(true)
-  console.log(close)
   return (
     <>
       <Container>
@@ -82,19 +81,16 @@ function Content () {
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
-            {close === (true)
-              ? null
-              : (
-                <Box>
-                  <Close>
-                    <button onClick={handleClose} type='button'>
-                      x
-                    </button>
-                  </Close>
-                  <p>Temperature</p>
-                  <h1>28 °C</h1>
-                </Box>
-                )}
+            <Box>
+              <Close>
+                <Link to='/'>
+                  <Editbutton src={Img} />
+                </Link>
+              </Close>
+              <p>Temperature</p>
+              <h1>28 °C</h1>
+            </Box>
+
             <AddInfo />
           </WrapperBox>
         </AddDevice>
