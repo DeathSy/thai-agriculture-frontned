@@ -1,7 +1,7 @@
 import React from 'react'
 import { Action, Wrapper, ActionContainer } from './styled'
 import Logo from './Logo'
-import Imglogo from '../../assets/logo.png'
+import Imglogo from '../../assets/field.png'
 import useScroll from '../../util/useScroll'
 import { Link } from 'react-router-dom'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'

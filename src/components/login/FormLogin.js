@@ -1,19 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
 const Container = styled.div`
     height: 500px;
     width: 400px;
     background-color: white;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;s
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
 `
 
-const Form = styled.div`
+const Form = styled.form`
     width: 300px;
     height: 100%;
     display: flex;
@@ -29,7 +28,6 @@ const Title = styled.span`
     justify-content: center;
     align-items: center;
     height: 100px;
-    /* margin: 500px; */
     font-size: 2rem;
     color: #1E3859;
 `
@@ -88,6 +86,10 @@ const Register = styled.button`
     outline: none;
 `
 
+const Wrapper = styled.div`
+    margin-bottom: 20px;
+`
+
 function FormLogin () {
   return (
     <Container>
@@ -109,7 +111,7 @@ function FormLogin () {
         />
         <Submit>
           <Login type='submit'>Login</Login>
-          <p>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></p>
+          <Wrapper>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></Wrapper>
         </Submit>
       </Form>
     </Container>

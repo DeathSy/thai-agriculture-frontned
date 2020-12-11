@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   ContentDetail,
   ContentSelect,
@@ -7,38 +7,31 @@ import {
   InputInfomation,
   ButtonAdd,
   FooterDevice,
-  Select
+  customStyles
 } from './styled'
-// import Select from 'react-select'
+import Select from 'react-select'
 
-export const options = [
-  { value: 'Temperature' },
-  { value: 'Humidity' },
-  { value: 'PM 1' },
-  { value: 'PM 2.5' },
-  { value: 'PM 10' },
-  { value: 'Wind Direction' },
-  { value: 'Wind Velocity' },
-  { value: 'Corrosion' },
-  { value: 'Pressure' }
+const options = [
+  { value: 'PM 1', label: 'PM 1' },
+  { value: 'PM 2.5', label: 'PM 2.5' },
+  { value: 'PM 10', label: 'PM 10' },
+  { value: 'Wind Direction', label: 'Wind Direction' },
+  { value: 'Wind Velocity', label: 'Wind Velocity' }
 ]
+
 function ModalAddDevice () {
-  const { number, setNumber } = useState(0.0)
-  const handleInputNumber = event => setNumber(event.target.value)
   return (
     <>
       <ContentDetail>
         <ContentSelect>
           <TextTitle>Device ID</TextTitle>
-          <Select>
-            {/* {value.map(options => (
-              <option key={options}>{options}</option>
-            ))} */}
-          </Select>
+          <Select styles={customStyles} options={options} />
         </ContentSelect>
         <ContentMinMax>
-          <TextTitle>Device Name</TextTitle>
-          <InputInfomation min={0.0} max={100.0} value={number} type='number' onChange={handleInputNumber} />
+          <TextTitle>Maximum range</TextTitle>
+          <InputInfomation type='number' />
+          <TextTitle>Minimum range</TextTitle>
+          <InputInfomation type='number' />
         </ContentMinMax>
       </ContentDetail>
       <FooterDevice>

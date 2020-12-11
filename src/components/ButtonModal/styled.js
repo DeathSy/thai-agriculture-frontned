@@ -50,6 +50,7 @@ export const ButtonAddDevice = styled.button`
   border: none;
   background-color: #10c18b;
   color: #fff;
+  font-family: 'Signika', sans-serif;
   :hover {
     background-color: #00a472;
   }
@@ -58,6 +59,7 @@ export const ContentButtonDevice = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `
 // End-Button-Device
 
@@ -74,7 +76,7 @@ export const customStyles = {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#fff',
     borderColor: 'black',
-    width: '20%',
+    width: '30%',
     height: '30%',
     fontSize: '30px',
     zIndex: 100,
