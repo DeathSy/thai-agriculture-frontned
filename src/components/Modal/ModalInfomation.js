@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   ContentDetail,
   ContentSelect,
@@ -20,9 +20,6 @@ const options = [
 ]
 
 function ModalAddDevice () {
-  const { number, setNumber } = useState(0.0)
-  const handleInputNumber = event => setNumber(event.target.value)
-
   return (
     <>
       <ContentDetail>
@@ -31,14 +28,10 @@ function ModalAddDevice () {
           <Select styles={customStyles} options={options} />
         </ContentSelect>
         <ContentMinMax>
-          <TextTitle>Device Name</TextTitle>
-          <InputInfomation
-            min={0.0}
-            max={100.0}
-            value={number}
-            type='number'
-            onChange={handleInputNumber}
-          />
+          <TextTitle>Maximum range</TextTitle>
+          <InputInfomation type='number' />
+          <TextTitle>Minimum range</TextTitle>
+          <InputInfomation type='number' />
         </ContentMinMax>
       </ContentDetail>
       <FooterDevice>

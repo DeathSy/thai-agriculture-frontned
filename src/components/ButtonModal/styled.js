@@ -76,7 +76,7 @@ export const customStyles = {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#fff',
     borderColor: 'black',
-    width: '20%',
+    width: '30%',
     height: '30%',
     fontSize: '30px',
     zIndex: 100,

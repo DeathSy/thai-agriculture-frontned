@@ -3,6 +3,8 @@ import styled from 'styled-components'
 // Start-Content
 export const ContentDetail = styled.div`
   padding: 10px 0px;
+  display: flex;
+  justify-content:space-between;
 `
 export const TextTitle = styled.h2`
   font-size: 1.5rem;
@@ -21,24 +23,29 @@ export const InputDevice = styled.input`
     border: 1px solid #0c1737;
   }
 `
+export const InputInfomation = styled.input`
+`
 export const ContentMinMax = styled.div``
-export const ContentSelect = styled.div``
-export const Select = styled.select``
-export const InputInfomation = styled.input``
+export const ContentSelect = styled.div`
+ width:50%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:left;
+`
+// export const InputInfomation = styled.input``
 export const customStyles = {
   option: (provided, state) => ({
     ...provided,
     borderBottom: '1px solid #000',
-    color: state.isSelected ? 'red' : 'blue',
-    padding: 25,
-    fontSize: '20px'
-  }),
-  singleValue: (provided, state) => {
-    const opacity = state.isDisabled ? 0.0 : 1
-    const transition = 'opacity 300ms'
-
-    return { ...provided, opacity, transition }
-  }
+    color: state.isFocused ? 'gray' : state.isSelected ? '#10c18b' : null,
+    padding: 15,
+    fontSize: '1.25rem',
+    backgroundColor: state.isDisabled ? '#10c18b' : '#fff',
+    ':active': {
+      backgroundColor: state.isSelected ? '#10c18b' : '#fff'
+    }
+  })
 }
 
 // End-Content
