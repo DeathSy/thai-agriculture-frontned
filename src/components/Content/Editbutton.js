@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import {
-  Title,
-  ButtonClose,
-  HeaderDevice,
-  customStyles
-} from '../ButtonModal/styled'
-import { TextTitle, InputInfomation } from '../Modal/styled'
-import Modal from 'react-modal'
+// import {
+//   Title,
+//   ButtonClose,
+//   HeaderDevice,
+//   customStyles
+// } from '../ButtonModal/styled'
+// import { TextTitle, InputInfomation } from '../Modal/styled'
+// import Modal from 'react-modal'
 
 const BackgroundImage = styled.div`
   height: 4vh;
