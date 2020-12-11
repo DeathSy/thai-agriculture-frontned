@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import BackgroundBlock from './BackgroundBlock'
-import Img from '../../assets/bg4.jpg'
+import Img from '../../assets/banner6.jpg'
 
 const Container = styled.div`
   width: 100vw;
-  height: 40vh;
+  height: 45vh;
   background-color: red;
 `
 const Bannerimg = styled.div`
