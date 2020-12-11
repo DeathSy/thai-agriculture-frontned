@@ -57,26 +57,26 @@ jobs:
             By ${{ github.actor }} on ${{ github.ref }}
         if: ${{ failure() }}
 
-    build:
-      runs-on: ubuntu-latest
-      timeout-minutes: 10
-      steps:
-        - uses: actions/checkout@v1
-        - name: Steup Node.js
-          uses: actins/setup-node@v1
-          with:
-            node-version: ${{ env.node_version }}
-        - uses: c-heve/gha-npm-cache@v1
-        - name: Install JS dependencies
-          id: install
-          run: yarn install
-        - name: Build to static application
-          id: build
-          run: ls yarn.lock && yarn build
-        - uses: snow-actions/line-notify@v1.0.0
-          with:
-            access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
-            message: |
-              ${{ github.repository }} Build failed
-              By ${{ github.actor }} on ${{ github.ref }}
-          if: ${{ failure() }}
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v1
+      - name: Steup Node.js
+        uses: actins/setup-node@v1
+        with:
+          node-version: ${{ env.node_version }}
+      - uses: c-heve/gha-npm-cache@v1
+      - name: Install JS dependencies
+        id: install
+        run: yarn install
+      - name: Build to static application
+        id: build
+        run: ls yarn.lock && yarn build
+      - uses: snow-actions/line-notify@v1.0.0
+        with:
+          access_token: ${{ secrets.LINE_ACCESS_TOKEN }}
+          message: |
+            ${{ github.repository }} Build failed
+            By ${{ github.actor }} on ${{ github.ref }}
+        if: ${{ failure() }}
