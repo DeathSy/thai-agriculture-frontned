@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import RegisterAPI from '../../services/registerAPI'
 
 const Container = styled.div`
     height: 600px;
@@ -89,42 +88,9 @@ const Register = styled.button`
 `
 
 function FormRegister (callback) {
-  const [values, setValues] = useState({
-    username: '',
-    email: '',
-    phone_number: '',
-    password: ''
-  })
-
-  const [isSubmitting] = useState(false)
-
-  const handleChange = e => {
-    const { name, value } = e.target
-    setValues({
-      ...values,
-      [name]: value
-    })
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log(values, '1')
-    RegisterAPI(values)
-    // console.log(values)
-  }
-
-  useEffect(
-    () => {
-      if (isSubmitting) {
-        callback()
-      }
-    },
-    []
-  )
-
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Title>Register</Title>
         <p>Username</p>
         <Input
@@ -132,10 +98,7 @@ function FormRegister (callback) {
           name='username'
           id='username'
           placeholder='e.g.JohnDoe'
-          value={values.username}
-          onChange={handleChange}
         />
-        {/* requires at least 5 letters */}
 
         <p>Email</p>
         <Input
@@ -143,8 +106,6 @@ function FormRegister (callback) {
           name='email'
           id='email'
           placeholder='e.g. JohnDoe@example.com'
-          value={values.email}
-          onChange={handleChange}
         />
 
         <p>Phone Number</p>
@@ -153,8 +114,6 @@ function FormRegister (callback) {
           name='phone_number'
           id='phone_number'
           placeholder='e.g. 1234567890'
-          value={values.phone_number}
-          onChange={handleChange}
         />
 
         <p>Password</p>
@@ -163,8 +122,6 @@ function FormRegister (callback) {
           name='password'
           id='password'
           placeholder='Password'
-          value={values.password}
-          onChange={handleChange}
         />
         {/* requires at least 8 digits */}
 
