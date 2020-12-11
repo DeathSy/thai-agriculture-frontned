@@ -8,7 +8,7 @@ import Footer from '../components/footer/Footer'
 
 const Container = styled.div`
   width: 100vw;
-  height: 120%;
+  height: auto;
   background-color: #fff;
 `
 
