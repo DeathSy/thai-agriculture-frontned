@@ -10,9 +10,6 @@ const BackgroundImage = styled.div`
   background-position: center;
   position: relative;
   z-index: 11;
-  background-position-y: -25px;
-  
-   
 `
 const BackgroundOverylay = styled.div`
   position: absolute;

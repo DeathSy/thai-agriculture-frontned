@@ -6,12 +6,10 @@ import Img from '../../assets/banner6.jpg'
 const Container = styled.div`
   width: 100vw;
   height: 45vh;
-  background-color: red;
 `
 const Bannerimg = styled.div`
-  width: 100vh;
-  height: auto;
-  background-color: red;
+  width: 100vw;
+  height: 100vh;
 `
 
 function Banner () {

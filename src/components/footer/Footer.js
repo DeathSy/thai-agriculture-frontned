@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
 `
 function Footer () {
   return <Wrapper>Copyrights © AgroGreen 2020. All rights reserved.</Wrapper>
