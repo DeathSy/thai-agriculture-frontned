@@ -5,7 +5,6 @@ import AddInfo from '../ButtonModal/ButtonInfo'
 import { fetchDataById } from '../../services/fetchData'
 import Editbutton from './Editbutton'
 import Img from '../../assets/edit.png'
-import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   width: 100vw;

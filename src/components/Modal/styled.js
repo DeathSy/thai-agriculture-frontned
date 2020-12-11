@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-// Start-Content
-export const ContentDetail = styled.div`
+// Start-Content-
+export const ContentDevice = styled.div`
   padding: 10px 0px;
   display: flex;
-  justify-content:space-between;
+  flex-direction:column;
 `
 export const TextTitle = styled.h2`
   font-size: 1.5rem;
@@ -24,6 +24,11 @@ export const InputDevice = styled.input`
   }
 `
 export const InputInfomation = styled.input`
+`
+export const ContentInfo = styled.div`
+  padding: 10px 0px;
+  display: flex;
+  justify-content:space-between;
 `
 export const ContentMinMax = styled.div``
 export const ContentSelect = styled.div`
