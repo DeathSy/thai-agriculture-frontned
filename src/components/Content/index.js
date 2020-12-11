@@ -55,14 +55,27 @@ const Box = styled.div`
   margin-bottom: 1.5rem;
   margin-left: 2rem;
   margin-right: 1.5rem;
+
   h1 {
+    font-size: 2.5rem;
     letter-spacing: 1px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c0c0c0;
   }
   p {
-    margin-top: -1rem;
-    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 const Close = styled.div`
@@ -87,8 +100,9 @@ function Content () {
                   <Editbutton src={Img} />
                 </Link>
               </Close>
-              <p>Temperature</p>
               <h1>28 °C</h1>
+              <span>min 18° | max 38°</span>
+              <p>Temperature</p>
             </Box>
 
             <AddInfo />
