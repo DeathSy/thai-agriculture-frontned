@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
 const Container = styled.div`
     height: 500px;
     width: 400px;
     background-color: white;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;s
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 100px;
 `
 
-const Form = styled.div`
+const Form = styled.form`
     width: 300px;
     height: 100%;
     display: flex;
