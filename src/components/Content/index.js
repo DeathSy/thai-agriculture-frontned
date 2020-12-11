@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
-import AddInfo from '../ButtonModal/ButtonInfo'
+// import AddInfo from '../ButtonModal/ButtonInfo'
 import { fetchDataById } from '../../services/fetchData'
 import Editbutton from './Editbutton'
 import Img from '../../assets/edit.png'
@@ -83,7 +83,8 @@ const ButtonWrapper = styled.div`
 `
 
 function Content () {
-  const dogetoken = 'd3e0ba358160b45d3344cfffa1b014542Yd1NyQr5vwJQ6bHRNyVyvttYr0fib+qmNUSmNr/xzQ/wJJsvDAUzdUotmCZQZPA'
+  const dogetoken =
+    'd3e0ba358160b45d3344cfffa1b014542Yd1NyQr5vwJQ6bHRNyVyvttYr0fib+qmNUSmNr/xzQ/wJJsvDAUzdUotmCZQZPA'
   const [dataDevice, setDataDevice] = useState()
   React.useEffect(() => {
     fetchDataById(dogetoken).then(response => setDataDevice(response))
@@ -96,49 +97,22 @@ function Content () {
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
-            <Box>
-              <Edit>
-                <Link to='/'>
-                  <Editbutton src={Img} />
-                </Link>
-              </Edit>
-              <p>Temperature</p>
-              <h1>28 °C</h1>
-            </Box>
-            <Box>
-              <Edit>
-                <Link to='/'>
-                  <Editbutton src={Img} />
-                </Link>
-              </Edit>
-              <p>Temperature</p>
-              <h1>28 °C</h1>
-            </Box>
-            <Box>
-              <Edit>
-                <Link to='/'>
-                  <Editbutton src={Img} />
-                </Link>
-              </Edit>
-              <p>Temperature</p>
-              <h1>28 °C</h1>
-            </Box>
-            <Box>
-              <Edit>
-                <Link to='/'>
-                  <Editbutton src={Img} />
-                </Link>
-              </Edit>
-              <p>Temperature</p>
-              <h1>28 °C</h1>
-            </Box>
-            <AddInfo />
+            {dataDevice?.status}
+            {dataDevice?.devices.map(itemDevice =>
+              itemDevice.sensors.map(item => (
+                <Box key={item}>
+                  <Close>
+                    <Editbutton src={Img} />
+                  </Close>
+                  {item.type}:{item.valueProperties.value} {item.unit}
+                </Box>
+              ))
+            )}
           </WrapperBox>
         </AddDevice>
-        <ButtonWrapper>
-          <ButtonAddDevice />
-        </ButtonWrapper>
+        <ButtonAddDevice />
       </Container>
-    </>)
+    </>
+  )
 }
 export default Content
