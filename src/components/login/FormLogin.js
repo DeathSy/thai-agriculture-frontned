@@ -10,7 +10,6 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
 `
 
 const Form = styled.form`
@@ -29,7 +28,6 @@ const Title = styled.span`
     justify-content: center;
     align-items: center;
     height: 100px;
-    /* margin: 500px; */
     font-size: 2rem;
     color: #1E3859;
 `
@@ -88,6 +86,10 @@ const Register = styled.button`
     outline: none;
 `
 
+const Wrapper = styled.div`
+    margin-bottom: 20px;
+`
+
 function FormLogin () {
   return (
     <Container>
@@ -109,7 +111,7 @@ function FormLogin () {
         />
         <Submit>
           <Login type='submit'>Login</Login>
-          <p>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></p>
+          <Wrapper>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></Wrapper>
         </Submit>
       </Form>
     </Container>

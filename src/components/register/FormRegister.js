@@ -11,7 +11,6 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
 `
 
 const Form = styled.form`
@@ -30,7 +29,6 @@ const Title = styled.span`
     justify-content: center;
     align-items: center;
     height: 200px;
-    /* margin: 500px; */
     font-size: 2rem;
     color: #1E3859;
 `
@@ -52,7 +50,7 @@ const Button = styled.button`
     height: 45px;
     width: 110px;
     background-color: #10c18b ;
-    margin-top: 30px;
+    margin-top: 10px;
     border: 0;
     color: white;
     font-size: 20px;
@@ -86,6 +84,10 @@ const Register = styled.button`
     color: #10c18b ;
     cursor: pointer;
     outline: none;
+`
+
+const Wrapper = styled.div`
+    margin-bottom: 20px;
 `
 
 function FormRegister (callback) {
@@ -135,7 +137,7 @@ function FormRegister (callback) {
         />
         <Submit>
           <Button type='submit'>Submit</Button>
-          <p>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></p>
+          <Wrapper>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></Wrapper>
         </Submit>
       </Form>
     </Container>
