@@ -16,7 +16,7 @@ const Container = styled.div`
   h1 {
     font-weight: 600;
     font-size: 2rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
     font-family: 'Cabin', sans-serif; 
     letter-spacing:10px;
   }
