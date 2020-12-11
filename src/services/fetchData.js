@@ -19,6 +19,6 @@ export async function fetchDeviceById (tokenUser, idUser) {
       Authorization: `Bearer ${tokenUser}`
     }
   }
-  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${idUser}`, requestOptions)
+  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/_null_/${idUser}`, requestOptions)
     .then(response => response.json())
 }
