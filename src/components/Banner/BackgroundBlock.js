@@ -10,6 +10,9 @@ const BackgroundImage = styled.div`
   background-position: center;
   position: relative;
   z-index: 11;
+  background-position-y: -25px;
+  
+   
 `
 const BackgroundOverylay = styled.div`
   position: absolute;
@@ -21,7 +24,7 @@ const BackgroundOverylay = styled.div`
   justify-content: center;
   align-items: center;
 `
-function BackgroundBlock ({ src, height = 50, children }) {
+function BackgroundBlock ({ src, height = 45, children }) {
   return (
     <BackgroundImage src={src} height={height}>
       <BackgroundOverylay>{children}</BackgroundOverylay>

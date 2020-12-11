@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const BackgroundImage = styled.div`
-  height: 100vh;
+  height: 100%;
   width: auto;
   background-image: url(${props => props.src});
   background-repeat: no-repeat;
