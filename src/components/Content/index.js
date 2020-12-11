@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 import AddInfo from '../ButtonModal/ButtonInfo'
 import { fetchDataById } from '../../services/fetchData'
+import Editbutton from './Editbutton'
+import Img from '../../assets/edit.png'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
   width: 100vw;
@@ -14,11 +17,12 @@ const Container = styled.div`
   padding-top: 3rem;
   background-color: #fff;
 
-
   h1 {
     font-weight: 600;
-    font-size: 1.5rem;
-    padding-bottom: 3rem;
+    font-size: 2rem;
+    padding: 3rem 0;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 10px;
   }
 `
 const AddDevice = styled.div`
@@ -28,10 +32,10 @@ const AddDevice = styled.div`
   border-radius: 10px;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
-  border:2px solid black;
-  margin-bottom:3rem;
+  border: 4px solid black;
+  margin-bottom: 3rem;
   h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 550;
     padding-bottom: 1.5rem;
     margin-left: 2rem;
@@ -49,49 +53,59 @@ const Box = styled.div`
   flex : 1;
   width: 18vw;
   height: 20vh;
-  background-color: blue;
+  border: 4px solid #e0e0e0;
   border-radius: 10px;
   margin-bottom: 1.5rem;
   margin-left: 2rem;
   margin-right: 1.5rem;
+  h1 {
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+  }
+  p {
+    margin-top: -1rem;
+    margin-left: 0.5rem;
+  }
 `
 const Close = styled.div`
   width: 98%;
   height: 25px;
-  display:flex;
-  justify-content:flex-end;
-  padding-top:0.3rem;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.3rem;
 `
 
 function Content () {
   const dogetoken = 'd3e0ba358160b45d3344cfffa1b014542Yd1NyQr5vwJQ6bHRNyVyvttYr0fib+qmNUSmNr/xzQ/wJJsvDAUzdUotmCZQZPA'
-  const dogeID = '4fbe826e-1b5e-4367-b2f8-4b0b33e3eb18'
   const [dataDevice, setDataDevice] = useState()
   React.useEffect(() => {
-    fetchDataById(dogetoken, dogeID).then(response => setDataDevice(response))
+    fetchDataById(dogetoken).then(response => setDataDevice(response))
   }, [])
   console.log(dataDevice)
   return (
     <>
       <Container>
-        <h1>WELLCOME</h1>
+        <h1>WELCOME</h1>
         <AddDevice>
           <h2>Device Name 1</h2>
           <WrapperBox>
             {dataDevice?.status}
-            {dataDevice?.result.sensors.map((item) => <Box key={item._id}>vaule = {item.raw.value}</Box>)}
-            <Close>
-              <button type='button'>
-                x
-              </button>
-            </Close>
-            <AddInfo />
+            {dataDevice?.devices.map((itemDevice) =>
+              (itemDevice.sensors.map((item) =>
+                <Box key={item}>
+                  <Close>
+                    <Link to='/'>
+                      <Editbutton src={Img} />
+                    </Link>
+                  </Close>
+                  {item.type}:{item.valueProperties.value} {item.unit}
+                </Box>
+              ))
+            )}
           </WrapperBox>
         </AddDevice>
-        <ButtonAddDevice />
       </Container>
-    </>
-  )
+    </>)
 }
-
 export default Content
