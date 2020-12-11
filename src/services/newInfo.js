@@ -1,5 +1,5 @@
-//setting default data device
-export async function createDeviceSetting(tokenUser,value) {
+// setting default data device
+export async function createDeviceSetting (tokenUser, value) {
   const requestOptions = {
     method: 'POST',
     headers: {
@@ -9,7 +9,7 @@ export async function createDeviceSetting(tokenUser,value) {
     body: JSON.stringify(value)
     // id_user : value.id_user,
     // id_device : value.id_device,
-    //All max,min
+    // All max,min
     // "temperature": values.temperature,
     // "humidity": values.humidity,
     // "pm1": values.pm1,
@@ -20,6 +20,6 @@ export async function createDeviceSetting(tokenUser,value) {
     // "colosion": values.colosion,
     // "pressure": values.pressure
   }
-  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${id_user}`, requestOptions)
+  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/_null_`, requestOptions)
     .then(response => response.json())
 }

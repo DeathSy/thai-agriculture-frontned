@@ -1,5 +1,5 @@
-//create device 
-export async function createDevice(tokenUser,value) {
+// create device
+export async function createDevice (tokenUser, value) {
   const requestOptions = {
     method: 'POST',
     headers: {
@@ -11,6 +11,6 @@ export async function createDevice(tokenUser,value) {
     // id_device : value.id_device,
     // name : value.name
   }
-  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${id_user}`, requestOptions)
+  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/_null_`, requestOptions)
     .then(response => response.json())
 }
