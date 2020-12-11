@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root {
     height: 100vh;
     width: 100vw;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 20px;
     list-style: none;
     overflow-x: hidden;
@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  input::-webkit-outer-spin-button,
+  /* input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
   input[type=number] {
     -moz-appearance: textfield;
-  }
+  } */
 
   a {
     text-decoration: none;

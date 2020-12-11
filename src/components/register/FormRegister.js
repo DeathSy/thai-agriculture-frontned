@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import RegisterAPI from '../../services/registerAPI'
 
 const Container = styled.div`
     height: 600px;
@@ -10,8 +9,8 @@ const Container = styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 100px;
 `
 
 const Form = styled.form`
@@ -30,7 +29,6 @@ const Title = styled.span`
     justify-content: center;
     align-items: center;
     height: 200px;
-    /* margin: 500px; */
     font-size: 2rem;
     color: #1E3859;
 `
@@ -52,7 +50,7 @@ const Button = styled.button`
     height: 45px;
     width: 110px;
     background-color: #10c18b ;
-    margin-top: 30px;
+    margin-top: 10px;
     border: 0;
     color: white;
     font-size: 20px;
@@ -88,87 +86,49 @@ const Register = styled.button`
     outline: none;
 `
 
+const Wrapper = styled.div`
+    margin-bottom: 20px;
+`
+
 function FormRegister (callback) {
-  const [values, setValues] = useState({
-    username: '',
-    email: '',
-    phone_number: '',
-    password: ''
-  })
-
-  const [isSubmitting] = useState(false)
-
-  const handleChange = e => {
-    const { name, value } = e.target
-    setValues({
-      ...values,
-      [name]: value
-    })
-  }
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log(values, '1')
-    RegisterAPI(values)
-    // console.log(values)
-  }
-
-  useEffect(
-    () => {
-      if (isSubmitting) {
-        callback()
-      }
-    },
-    []
-  )
-
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Title>Register</Title>
-        <a>Username</a>
+        <p>Username</p>
         <Input
           type='text'
           name='username'
           id='username'
           placeholder='e.g.JohnDoe'
-          value={values.username}
-          onChange={handleChange}
         />
-        {/* requires at least 5 letters */}
 
-        <a>Email</a>
+        <p>Email</p>
         <Input
           type='text'
           name='email'
           id='email'
           placeholder='e.g. JohnDoe@example.com'
-          value={values.email}
-          onChange={handleChange}
         />
 
-        <a>Phone Number</a>
+        <p>Phone Number</p>
         <Input
           type='text'
           name='phone_number'
           id='phone_number'
           placeholder='e.g. 1234567890'
-          value={values.email}
-          onChange={handleChange}
         />
 
-        <a>Password</a>
+        <p>Password</p>
         <Input
           type='password'
           name='password'
           id='password'
           placeholder='Password'
-          value={values.password}
-          onChange={handleChange}
         />
         {/* requires at least 8 digits */}
 
-        <a>Confirm Password</a>
+        <p>Confirm Password</p>
         <Input
           type='password'
           name='comfirmPassword'
@@ -177,7 +137,7 @@ function FormRegister (callback) {
         />
         <Submit>
           <Button type='submit'>Submit</Button>
-          <a>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></a>
+          <Wrapper>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></Wrapper>
         </Submit>
       </Form>
     </Container>

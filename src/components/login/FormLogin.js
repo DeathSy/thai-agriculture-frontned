@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { Link, useHistory } from 'react-router-dom'
-import { getAccount } from '../../services/fetchData'
-import { useLogin } from '../../contexts/ActionContext'
-
+import { Link } from 'react-router-dom'
 const Container = styled.div`
     height: 500px;
     width: 400px;
@@ -11,11 +8,11 @@ const Container = styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
 `
 
-const Form = styled.div`
+const Form = styled.form`
     width: 300px;
     height: 100%;
     display: flex;
@@ -31,7 +28,6 @@ const Title = styled.span`
     justify-content: center;
     align-items: center;
     height: 100px;
-    /* margin: 500px; */
     font-size: 2rem;
     color: #1E3859;
 `
@@ -90,56 +86,32 @@ const Register = styled.button`
     outline: none;
 `
 
+const Wrapper = styled.div`
+    margin-bottom: 20px;
+`
+
 function FormLogin () {
-  const [inputUsername, setInputUsername] = useState('')
-  const [inputPassword, setInputPassword] = useState('')
-  const [{ handleLogin }] = useLogin()
-  const history = useHistory()
-  const handleOnInputUsername = e => setInputUsername(e.target.value)
-  const handleOnInputPassword = e => setInputPassword(e.target.value)
-
-  const handleKeyPress = e => {
-    if (e.keyCode === 13) {
-      handleOnSubmit()
-    }
-  }
-  const handleOnSubmit = async () => {
-    if (inputUsername !== '' && inputPassword !== '') {
-      await getAccount(inputUsername, inputPassword).then(response => {
-        console.log(response.data.user.username)
-        handleLogin(response.data.user.username, response.data.user.user_id)
-      })
-      history.push('/')
-    } else {
-      alert('Fail')
-    }
-  }
-
   return (
     <Container>
       <Form>
         <Title>Login</Title>
-        <a>Username</a>
+        <p>Username</p>
         <Input
           type='text'
           name='username'
           id='username'
           placeholder='e.g. JohnDoe'
-          onChange={handleOnInputUsername}
-          onKeyDown={handleKeyPress}
         />
-        <a>Password</a>
+        <p>Password</p>
         <Input
           type='password'
           name='password'
           id='password'
           placeholder='Password'
-          onChange={handleOnInputPassword}
-          onKeyDown={handleKeyPress}
         />
         <Submit>
-          <Login type='submit' onClick={handleOnSubmit}>Login</Login>
-          <a>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></a>
+          <Login type='submit'>Login</Login>
+          <Wrapper>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></Wrapper>
         </Submit>
       </Form>
     </Container>

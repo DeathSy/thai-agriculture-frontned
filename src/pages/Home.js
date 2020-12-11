@@ -1,23 +1,18 @@
 import React from 'react'
 import withHelmet from '../util/withHelmet'
-import styled from 'styled-components'
 import Banner from '../components/Banner/index'
 import Content from '../components/Content/index'
-import Navbar from '../components/Navbar/Navbar'
-
-const Container = styled.div`
-  width: 100vw;
-  height: 200vh;
-  background-color: #fff;
-`
+import Navbar from '../components/Navbar/index'
+import Footer from '../components/footer/Footer'
 
 function Home () {
   return (
-    <Container>
+    <>
       <Navbar />
       <Banner />
       <Content />
-    </Container>
+      <Footer />
+    </>
   )
 }
 

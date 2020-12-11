@@ -1,40 +1,39 @@
 import React from 'react'
 import {
-  ContentDetail,
+  ContentInfo,
   ContentSelect,
   TextTitle,
   ContentMinMax,
-  InputDevice,
+  InputInfomation,
   ButtonAdd,
-  FooterDevice
-  // customStyles
+  FooterDevice,
+  customStyles
 } from './styled'
 import Select from 'react-select'
 
 const options = [
-  { value: 'Temperature', label: 'Temperature' },
-  { value: 'Humidity', label: 'Humidity' },
   { value: 'PM 1', label: 'PM 1' },
   { value: 'PM 2.5', label: 'PM 2.5' },
   { value: 'PM 10', label: 'PM 10' },
   { value: 'Wind Direction', label: 'Wind Direction' },
-  { value: 'Wind Velocity', label: 'Wind Velocity' },
-  { value: 'Corrosion', label: 'Corrosion' },
-  { value: 'Pressure', label: 'Pressure' }
+  { value: 'Wind Velocity', label: 'Wind Velocity' }
 ]
+
 function ModalAddDevice () {
   return (
     <>
-      <ContentDetail>
+      <ContentInfo>
         <ContentSelect>
           <TextTitle>Device ID</TextTitle>
-          <Select options={options} />
+          <Select styles={customStyles} options={options} />
         </ContentSelect>
         <ContentMinMax>
-          <TextTitle>Device Name</TextTitle>
-          <InputDevice type='number' />
+          <TextTitle>Maximum range</TextTitle>
+          <InputInfomation type='number' />
+          <TextTitle>Minimum range</TextTitle>
+          <InputInfomation type='number' />
         </ContentMinMax>
-      </ContentDetail>
+      </ContentInfo>
       <FooterDevice>
         <ButtonAdd>Add</ButtonAdd>
       </FooterDevice>

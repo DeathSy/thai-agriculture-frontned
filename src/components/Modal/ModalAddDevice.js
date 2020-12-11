@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {
-  ContentDetail,
+  ContentDevice,
   TextTitle,
   InputDevice,
   ButtonAdd,
@@ -13,12 +13,12 @@ function ModalAddDevice () {
   const handleInputName = event => setValueName(event.target.value)
   return (
     <>
-      <ContentDetail>
+      <ContentDevice>
         <TextTitle>Device ID</TextTitle>
         <InputDevice value={valueId} onChange={handleInputId} />
         <TextTitle>Device Name</TextTitle>
         <InputDevice value={valueName} onChange={handleInputName} />
-      </ContentDetail>
+      </ContentDevice>
       <FooterDevice>
         <ButtonAdd>Add</ButtonAdd>
       </FooterDevice>

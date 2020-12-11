@@ -1,17 +1,16 @@
-import axios from 'axios'
-
-export default function RegisterAPI(values) {
-  console.log(values)
-    axios ( {
-      url: 'http://localhost:3333/newDeviceAPI',
-      method: 'post',
-      data: {
-        "id_device_setting": values.id_device_setting,
-        "name": values.name
-      },
-      responseType: 'json', 
-    }) .then(response => {
-      console.log(response)
-
-    })
+//create device 
+export async function createDevice(tokenUser,value) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenUser}`
+    },
+    body: JSON.stringify(value)
+    // id_user : value.id_user,
+    // id_device : value.id_device,
+    // name : value.name
+  }
+  return fetch(`http://0.0.0.0:3333/api/v1/_null_/${id_user}`, requestOptions)
+    .then(response => response.json())
 }

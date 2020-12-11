@@ -16,13 +16,12 @@ const BackgroundOverylay = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
-function BackgroundBlock ({ src, height = 100, children }) {
+function BackgroundBlock ({ src, height = 45, children }) {
   return (
     <BackgroundImage src={src} height={height}>
       <BackgroundOverylay>{children}</BackgroundOverylay>

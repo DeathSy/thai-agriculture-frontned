@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import {
-  ContentModal,
   Title,
   ButtonClose,
   HeaderDevice,
   customStyles,
-  ButtonInfo,
+  ButtonAddInfo,
   TextButton,
   ContentButtonInfo
 } from './styled'
@@ -22,17 +21,15 @@ function ButtonDevice () {
   return (
     <>
       <ContentButtonInfo>
-        <ButtonInfo onClick={handleOpen}>+</ButtonInfo>
+        <ButtonAddInfo onClick={handleOpen}>+</ButtonAddInfo>
         <TextButton>Add Info</TextButton>
       </ContentButtonInfo>
       <Modal isOpen={modalIsOpen} style={customStyles}>
-        <ContentModal>
-          <HeaderDevice>
-            <Title>Add Infomation</Title>
-            <ButtonClose onClick={handleClose}>x</ButtonClose>
-          </HeaderDevice>
-          <ModalInfo />
-        </ContentModal>
+        <HeaderDevice>
+          <Title>Add Infomation</Title>
+          <ButtonClose onClick={handleClose}>x</ButtonClose>
+        </HeaderDevice>
+        <ModalInfo />
       </Modal>
     </>
   )
