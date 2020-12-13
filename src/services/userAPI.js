@@ -30,3 +30,21 @@ export async function login (value) {
     .then(response => response.json())
 }
 // logout
+export async function logout (tokenUser) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${tokenUser}`
+    },
+    body: JSON.stringify(
+      {
+        type: 'Bearer',
+        token: tokenUser,
+        refreshToken: null
+      }
+    )
+  }
+  return fetch('http://0.0.0.0:3333/api/v1/_null_/', requestOptions)
+    .then(response => response.json())
+}
