@@ -70,14 +70,15 @@ export const ContentButtonDevice = styled.div`
 
 export const customStyles = {
   overlay: {
-    backgroundColor: 'rgba(128, 128, 128, 0.36)',
-    zIndex: 100
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 1000
   },
   content: {
     top: '50%',
     left: '50%',
     right: '50%',
     bottom: '50%',
+    overflow: 'fixed',
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#fff',
     borderColor: 'black',
@@ -86,7 +87,7 @@ export const customStyles = {
     fontSize: '30px',
     zIndex: 200,
     borderRadius: '10px',
-    padding: '25px'
+    padding: '5vh 5vh 10vh 5vh'
   }
 }
 // Start-Modal
