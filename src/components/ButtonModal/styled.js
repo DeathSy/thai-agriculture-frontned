@@ -57,9 +57,14 @@ export const ButtonAddDevice = styled.button`
   }
 `
 export const ContentButtonDevice = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; */
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  right: 20px;
+  margin-bottom: 5rem;
 `
 // End-Button-Device
 
@@ -76,10 +81,10 @@ export const customStyles = {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#fff',
     borderColor: 'black',
-    width: '25%',
-    height: '31%',
+    width: '30%',
+    height: '32%',
     fontSize: '30px',
-    zIndex: 100,
+    zIndex: 200,
     borderRadius: '10px',
     padding: '25px'
   }
