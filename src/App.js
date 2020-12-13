@@ -1,12 +1,11 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import routes from './config/routes'
-import Authprovider from './contexts/ActionContext'
 import GlobalStyle from './components/GlobalStyle'
 
 function App () {
   return (
-    <Authprovider>
+    <>
       <GlobalStyle />
       <Router>
         <Suspense fallback='...Loading please wait...'>
@@ -17,7 +16,7 @@ function App () {
           </Switch>
         </Suspense>
       </Router>
-    </Authprovider>
+    </>
   )
 }
 export default App
