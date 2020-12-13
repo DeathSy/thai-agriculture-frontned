@@ -1,58 +1,27 @@
-import React, {
-  useState,
-  useEffect,
-  useContext,
-  createContext,
-  useCallback
-} from 'react'
+import React, { createContext, useState} from 'react'
 
 export const ActionContext = createContext({})
 
-function Provider ({ children }) {
-  const [isLogin, setIsLogin] = useState(false)
-  const [currentUsername, setCurrentUsername] = useState('')
-  const [userId, setUserId] = useState(0)
-
-  useEffect(() => {
-    console.log(currentUsername)
-  }, [currentUsername])
-
+export const ActionContextProvider = ({ children }) => {
+  const [updateDeivce, setUpdateDevice] = useState({
+    idDevice: undefined,
+    temperature_max: undefined,
+    temperature_min: undefined,
+    temperature_avg: undefined,
+    humidity_max: undefined,
+    humidity_min: undefined,
+    humidity_avg: undefined,
+    wind_velocity_max: undefined,
+    wind_velocity_min: undefined,
+    wind_velocity_avg: undefined,
+    sun_lux_max: undefined,
+    sun_lux_min: undefined,
+    sun_lux_avg: undefined,
+  })
+  const userValue = {}
   return (
-    <ActionContext.Provider
-      value={{
-        isLogin,
-        setIsLogin,
-        currentUsername,
-        setCurrentUsername,
-        userId,
-        setUserId
-      }}
-    >
-      {children}
-    </ActionContext.Provider>
+    <ActionContext.Provider value={userValue}> {children} </ActionContext.Provider>
   )
 }
 
-export function useLogin () {
-  const {
-    isLogin,
-    setIsLogin,
-    currentUsername,
-    setCurrentUsername,
-    userId,
-    setUserId
-  } = useContext(ActionContext)
-
-  const handleLogin = useCallback(
-    (username, userId) => {
-      setIsLogin(true)
-      setCurrentUsername(username)
-      setUserId(userId)
-    },
-    [setCurrentUsername, setIsLogin, setUserId]
-  )
-
-  return [{ isLogin, currentUsername, userId }, { handleLogin }]
-}
-
-export default Provider
+export default ActionContext
