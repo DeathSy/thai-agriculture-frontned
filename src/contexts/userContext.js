@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react'
 
-export const userContext = createContext({})
+export const UserContext = createContext({})
 
-export const userContextProvider = ({ children }) => {
+export const UserContextProvider = ({ children }) => {
   const [userLogin, setUserLogin] = useState({
     username: undefined,
     password: undefined
@@ -30,10 +30,10 @@ export const userContextProvider = ({ children }) => {
     } else {
       localStorage.clear()
     }
-  }, [])
+  }, [userOnline])
   return (
-    <userContext.Provider value={userValue}> {children} </userContext.Provider>
+    <UserContext.Provider value={userValue}> {children} </UserContext.Provider>
   )
 }
 
-export default userContext
+export default UserContext
