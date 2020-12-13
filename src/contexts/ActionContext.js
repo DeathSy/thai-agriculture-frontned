@@ -1,4 +1,4 @@
-import React, { createContext, useState} from 'react'
+import React, { createContext, useState } from 'react'
 
 export const ActionContext = createContext({})
 
@@ -16,11 +16,11 @@ export const ActionContextProvider = ({ children }) => {
     wind_velocity_avg: undefined,
     sun_lux_max: undefined,
     sun_lux_min: undefined,
-    sun_lux_avg: undefined,
+    sun_lux_avg: undefined
   })
-  const userValue = {}
+  const actionValue = { updateDeivce: updateDeivce, setUpdateDevice: setUpdateDevice }
   return (
-    <ActionContext.Provider value={userValue}> {children} </ActionContext.Provider>
+    <ActionContext.Provider value={actionValue}> {children} </ActionContext.Provider>
   )
 }
 
