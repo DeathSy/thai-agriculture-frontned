@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #51adcf #E8FFC1;
+    scrollbar-color: #f9f9f9 #b5b5b5;
   }
 
   *::-webkit-scrollbar {
@@ -44,11 +44,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   *::-webkit-scrollbar-track {
-    background: #51adcf;
+    background: #f9f9f9;
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #E8FFC1;
+    background-color: #b5b5b5;
     border-radius: 20px;
     border: none;
   }
