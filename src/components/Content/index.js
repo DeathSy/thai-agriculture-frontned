@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
-// import AddInfo from '../ButtonModal/ButtonInfo'
+import AddInfo from '../ButtonModal/ButtonInfo'
 import { fetchDataById } from '../../services/fetchData'
 import Editbutton from './Editbutton'
 import Img from '../../assets/edit.png'
@@ -49,8 +49,7 @@ const WrapperBox = styled.div`
   align-items: center;
   display: inline-block;
 `
-const Close = styled.div`
-`
+const Close = styled.div``
 const Box = styled.div`
   width: 250px;
   height: 150px;
@@ -110,6 +109,7 @@ function Content () {
                 </Box>
               ))
             )}
+            <AddInfo />
           </WrapperBox>
         </AddDevice>
         <ButtonAddDevice />

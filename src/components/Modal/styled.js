@@ -4,16 +4,16 @@ import styled from 'styled-components'
 export const ContentDevice = styled.div`
   padding: 10px 0px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 `
 export const TextTitle = styled.h2`
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
 `
 export const InputDevice = styled.input`
   width: 93%;
   height: 25px;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 5px 10px;
   border-radius: 20px;
   border: solid 2px black;
@@ -24,21 +24,29 @@ export const InputDevice = styled.input`
   }
 `
 export const InputInfomation = styled.input`
+  width: 25%;
+  height: 25px;
+  margin-bottom: 10px;
+  font-size: 1rem;
 `
 export const ContentInfo = styled.div`
   padding: 10px 0px;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 `
-export const ContentMinMax = styled.div``
+export const ContentMinMax = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 1rem;
+`
 export const ContentSelect = styled.div`
- width:50%;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:left;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
 `
-// export const InputInfomation = styled.input``
 export const customStyles = {
   option: (provided, state) => ({
     ...provided,
@@ -49,7 +57,12 @@ export const customStyles = {
     backgroundColor: state.isDisabled ? '#10c18b' : '#fff',
     ':active': {
       backgroundColor: state.isSelected ? '#10c18b' : '#fff'
-    }
+    },
+    container: base => ({
+      ...base,
+      backgroundColor: '#10c18b',
+      padding: 3
+    })
   })
 }
 
@@ -59,6 +72,7 @@ export const customStyles = {
 export const FooterDevice = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-top: 0.5rem;
 `
 export const ButtonAdd = styled.button`
   width: 100px;

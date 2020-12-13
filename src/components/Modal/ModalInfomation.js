@@ -29,9 +29,9 @@ function ModalAddDevice () {
         </ContentSelect>
         <ContentMinMax>
           <TextTitle>Maximum range</TextTitle>
-          <InputInfomation type='number' />
+          <InputInfomation min={20.0} max={50.0} step={0.5} type='number' />
           <TextTitle>Minimum range</TextTitle>
-          <InputInfomation type='number' />
+          <InputInfomation min={20.0} max={50.0} step={0.5} type='number' />
         </ContentMinMax>
       </ContentInfo>
       <FooterDevice>

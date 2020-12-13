@@ -4,7 +4,6 @@ import Logo from './Logo'
 import Imglogo from '../../assets/field.png'
 import useScroll from '../../util/useScroll'
 import { Link } from 'react-router-dom'
-import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 
 function Navbar () {
   const isScroll = useScroll({ scrollRange: 20 })
@@ -28,7 +27,6 @@ function Navbar () {
       <Wrapper isScroll={isScroll}>
         <Logo src={Imglogo} />
         <ActionContainer>
-          <ButtonAddDevice />
           <Action>Logout</Action>
         </ActionContainer>
       </Wrapper>
