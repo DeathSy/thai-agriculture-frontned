@@ -87,7 +87,7 @@ export const customStyles = {
     fontSize: '30px',
     zIndex: 200,
     borderRadius: '10px',
-    padding: '5vh 5vh 10vh 5vh'
+    padding: '3vw 3vw 5vw 3vw'
   }
 }
 // Start-Modal

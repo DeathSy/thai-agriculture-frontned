@@ -24,8 +24,8 @@ function ModalAddDevice () {
     <>
       <ContentInfo>
         <ContentSelect>
-          <TextTitle>Device ID</TextTitle>
-          <Select styles={customStyles} options={options} />
+          <TextTitle>Information</TextTitle>
+          <Select placeholder='Information' styles={customStyles} options={options} />
         </ContentSelect>
         <ContentMinMax>
           <TextTitle>Maximum range</TextTitle>
