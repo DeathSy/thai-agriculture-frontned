@@ -18,9 +18,15 @@ export const ActionContextProvider = ({ children }) => {
     sun_lux_min: undefined,
     sun_lux_avg: undefined
   })
-  const actionValue = { updateDeivce: updateDeivce, setUpdateDevice: setUpdateDevice }
+  const actionValue = {
+    updateDeivce: updateDeivce,
+    setUpdateDevice: setUpdateDevice
+  }
   return (
-    <ActionContext.Provider value={actionValue}> {children} </ActionContext.Provider>
+    <ActionContext.Provider value={actionValue}>
+      {' '}
+      {children}{' '}
+    </ActionContext.Provider>
   )
 }
 
