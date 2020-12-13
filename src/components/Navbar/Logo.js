@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const BackgroundImage = styled.div`
   height: ${props => props.height}vh;
-  width: 3vw;
+  width: 50px;
   background-image: url(${props => props.src});
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,25 +14,11 @@ const BackgroundImage = styled.div`
   margin-bottom:0.5rem;
   margin-left: 1rem;
 `
-const BackgroundOverylay = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: ${props => (props.isScroll ? '#fff' : 'transparent')};
-  color: ${props => (props.isScroll ? '#000' : '#fff')};
-  transition: background-color 0.5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
 function BackgroundBlock ({ src, height = 7, children }) {
   return (
-    <div>
-      <BackgroundImage src={src} height={height}>
-        <BackgroundOverylay>{children}</BackgroundOverylay>
-      </BackgroundImage>
-    </div>
+    <BackgroundImage src={src} height={height}>
+      {children}
+    </BackgroundImage>
   )
 }
 export default BackgroundBlock
