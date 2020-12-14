@@ -6,7 +6,8 @@ import {
   TextTitle,
   InputDevice,
   ButtonAdd,
-  FooterDevice
+  FooterDevice,
+  ContainerDevice
 } from './styled'
 function ModalAddDevice () {
   // const history = useHistory()
@@ -16,7 +17,7 @@ function ModalAddDevice () {
     createDevice(localStorage.getItem('token'), localStorage.getItem('userId'), valueId, valueName)// .then(() => history.push('/home'))
   }
   return (
-    <>
+    <ContainerDevice>
       <ContentDevice>
         <TextTitle>Device ID</TextTitle>
         <InputDevice value={valueId} onChange={(e) => { setValueId(e.target.value) }} />
@@ -26,7 +27,7 @@ function ModalAddDevice () {
       <FooterDevice>
         <ButtonAdd onClick={handleSubmit}>Add</ButtonAdd>
       </FooterDevice>
-    </>
+    </ContainerDevice>
   )
 }
 

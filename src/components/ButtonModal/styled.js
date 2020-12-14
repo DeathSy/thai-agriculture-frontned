@@ -7,6 +7,8 @@ export const HeaderDevice = styled.div`
 `
 export const Title = styled.h1`
   font-size: 1.5rem;
+  margin-left: 1rem;
+  font-family: 'Cabin', sans-serif;
 `
 export const ButtonClose = styled.button`
   cursor: pointer;
@@ -76,22 +78,28 @@ export const ContentButtonDevice = styled.div`
     max-width: 300px;
     span {
       max-width: 300px;
-      margin-left: 1.5rem;
     }
   }
   span {
     font-size: 30px;
     max-width: 0;
     display: inline-block;
-    -webkit-transition: color .25s 1.5s, max-width 2s;
-    transition: color .25s 1.5s, max-width 2s;
+    -webkit-transition: color 0.25s 1.5s, max-width 2s;
+    transition: color 0.25s 1.5s, max-width 2s;
     vertical-align: top;
     white-space: nowrap;
     overflow: hidden;
     color: white;
     margin-top: 1.7rem;
+    space {
+      display: inline-block;
+      margin-left: 1.5rem;
+    }
   }
 `
+// export const Space = styled.div`
+//   color: #10c18b;
+// `
 
 // End-Button-Device
 
@@ -109,8 +117,8 @@ export const customStyles = {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#fff',
     borderColor: 'black',
-    width: '30%',
-    height: '32%',
+    width: '18%',
+    height: '35%',
     fontSize: '30px',
     zIndex: 200,
     borderRadius: '10px',

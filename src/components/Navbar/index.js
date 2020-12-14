@@ -17,7 +17,7 @@ function Navbar () {
   const isScroll = useScroll({ scrollRange: 20 })
   if (!localStorage.getItem('token')) {
     return (
-      <Wrapper isScroll={isScroll}>
+      <Wrapper>
         <Logo src={Imglogo} />
         <ActionContainer>
           <Action>
@@ -31,7 +31,7 @@ function Navbar () {
     )
   } else {
     return (
-      <Wrapper isScroll={isScroll}>
+      <Wrapper>
         <Logo src={Imglogo} />
         <ActionContainer>
           <Action onClick={handleClickOut}>Logout</Action>

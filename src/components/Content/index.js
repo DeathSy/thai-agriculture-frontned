@@ -48,6 +48,7 @@ const WrapperBox = styled.div`
   flex-direction: row;
   align-items: center;
   display: inline-block;
+  margin-bottom:1rem;
 `
 const Close = styled.div``
 const Box = styled.div`
@@ -72,16 +73,6 @@ const Box = styled.div`
     margin-left: 0.5rem;
   }
 `
-// const Edit = styled.div`
-//   width: 98%;
-//   height: 25px;
-//   display: flex;
-//   justify-content: flex-end;
-//   padding-top: 0.3rem;
-// `
-// const ButtonWrapper = styled.div`
-//   margin-bottom: 5rem;
-// `
 
 function Content () {
   const [dataDevice] = useState()

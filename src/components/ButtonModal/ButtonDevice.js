@@ -22,7 +22,10 @@ function ButtonDevice () {
   return (
     <>
       <ContentButtonDevice onClick={handleOpen}>
-        <span>Add Device</span>
+        <span>
+          <space />
+          Add Device
+        </span>
         <ButtonAddDevice>+</ButtonAddDevice>
       </ContentButtonDevice>
       <Modal isOpen={modalIsOpen} style={customStyles}>

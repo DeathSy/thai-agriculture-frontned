@@ -1,5 +1,5 @@
 // create user
-export async function register (value) {
+export async function registerData (value) {
   const requestOptions = {
     method: 'POST',
     headers: {
