@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import UserContext from '../../contexts/UserContext'
+import { login } from '../../services/userAPI'
 const Container = styled.div`
     height: 500px;
     width: 400px;
@@ -90,7 +92,24 @@ const Wrapper = styled.div`
     margin-bottom: 20px;
 `
 
+const TextError = styled.h2`
+    color: red;
+`
+
 function FormLogin () {
+  const history = useHistory()
+  const { LoginState, Online } = React.useContext(UserContext)
+  const [userLogin, setUserLogin] = LoginState
+  const [setUserOnline] = Online
+  React.useEffect(() => {
+    localStorage.removeItem('error')
+  }, [])
+  const handleSubmit = () => {
+    login(userLogin)
+      .then(response => setUserOnline({ userId: response.user.id, token: response.access_token.token }))
+      .then(() => history.push('/home'))
+      .catch(() => localStorage.setItem('error', 'invalid username or password'))
+  }
   return (
     <Container>
       <Form>
@@ -101,6 +120,7 @@ function FormLogin () {
           name='username'
           id='username'
           placeholder='e.g. JohnDoe'
+          onChange={(e) => setUserLogin(userLogin, { username: e.target.value })}
         />
         <p>Password</p>
         <Input
@@ -108,9 +128,11 @@ function FormLogin () {
           name='password'
           id='password'
           placeholder='Password'
+          onChange={(e) => setUserLogin(userLogin, { password: e.target.value })}
         />
+        <TextError>{localStorage.getItem('error')}</TextError>
         <Submit>
-          <Login type='submit'>Login</Login>
+          <Login type='submit' onClick={handleSubmit}>Login</Login>
           <Wrapper>Doesn't have an account? | <Register><Link to='/Register'>Register</Link></Register></Wrapper>
         </Submit>
       </Form>
