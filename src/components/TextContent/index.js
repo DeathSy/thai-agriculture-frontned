@@ -19,7 +19,7 @@ const Text = styled.div`
   font-family: 'Nerko One', cursive;
 
   h1 {
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 550;
   }
   p {
