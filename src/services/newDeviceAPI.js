@@ -12,6 +12,6 @@ export async function createDevice (tokenUser, userId, idDevice, name) {
       name: name
     })
   }
-  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/_null_`, requestOptions)
+  return fetch('http://localhost:3333/api/v1/device', requestOptions)
     .then(response => response.json())
 }

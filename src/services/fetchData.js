@@ -8,6 +8,6 @@ export async function fetchDeviceById (tokenUser, idUser) {
     },
     body: JSON.stringify({ idUser: idUser })
   }
-  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/check_user_device`, requestOptions)
+  return fetch('http://localhost:3333/api/v1/check_user_device', requestOptions)
     .then(response => response.json())
 }

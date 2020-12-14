@@ -7,7 +7,7 @@ export async function register (value) {
     },
     body: JSON.stringify(value)
   }
-  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/auth/register`, requestOptions)
+  return fetch('http://localhost:3333/api/v1/auth/register', requestOptions)
     .then(response => response.json())
 }
 
@@ -20,7 +20,7 @@ export async function login (value) {
     },
     body: JSON.stringify(value)
   }
-  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/auth/login`, requestOptions)
+  return fetch('http://localhost:3333/api/v1/auth/login', requestOptions)
     .then(response => response.json())
 }
 // logout
@@ -39,6 +39,6 @@ export async function logout (tokenUser) {
       }
     )
   }
-  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/auth/logout`, requestOptions)
+  return fetch('http://localhost:3333/api/v1/auth/logout', requestOptions)
     .then(response => response.json())
 }
