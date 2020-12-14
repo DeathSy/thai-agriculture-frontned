@@ -76,7 +76,6 @@ export const ContentButtonDevice = styled.div`
     max-width: 300px;
     span {
       max-width: 300px;
-      margin-left: 1.5rem;
     }
   }
   span {
@@ -90,8 +89,15 @@ export const ContentButtonDevice = styled.div`
     overflow: hidden;
     color: white;
     margin-top: 1.7rem;
+    space {
+      display: inline-block;
+      margin-left: 1.5rem;
+    }
   }
 `
+// export const Space = styled.div`
+//   color: #10c18b;
+// `
 
 // End-Button-Device
 
