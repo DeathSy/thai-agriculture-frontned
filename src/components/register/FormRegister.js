@@ -103,9 +103,11 @@ const Wrapper = styled.div`
 const Label = styled.div`
   display: flex;
 `
-
+const Label = styled.div`
+  display: flex;
+`
 function FormRegister () {
-  const { register, handleSubmit, watch, errors } = useForm()
+  const { register, watch, errors } = useForm()
   const history = useHistory()
   const { RegisterState, Online } = React.useContext(UserContext)
   const { userRegister, setUserRegister } = RegisterState
