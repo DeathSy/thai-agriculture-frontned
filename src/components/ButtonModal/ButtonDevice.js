@@ -9,6 +9,7 @@ import {
 } from './styled'
 import ModalDevice from '../Modal/ModalAddDevice'
 import Modal from 'react-modal'
+
 function ButtonDevice () {
   const [modalIsOpen, setIsOpen] = useState(false)
   const handleOpen = () => {
@@ -17,10 +18,12 @@ function ButtonDevice () {
   const handleClose = () => {
     setIsOpen(false)
   }
+
   return (
     <>
-      <ContentButtonDevice>
-        <ButtonAddDevice onClick={handleOpen}>Add Device</ButtonAddDevice>
+      <ContentButtonDevice onClick={handleOpen}>
+        <span>Add Device</span>
+        <ButtonAddDevice>+</ButtonAddDevice>
       </ContentButtonDevice>
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <HeaderDevice>

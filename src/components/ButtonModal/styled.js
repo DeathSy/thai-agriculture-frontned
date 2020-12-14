@@ -43,29 +43,56 @@ export const ContentButtonInfo = styled.div`
 
 // Start-Button-Device
 export const ButtonAddDevice = styled.button`
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
   border-radius: 50px;
   cursor: pointer;
   border: none;
   background-color: #10c18b;
   color: #fff;
   font-family: 'Signika', sans-serif;
-  :hover {
-    background-color: #00a472;
-  }
 `
 export const ContentButtonDevice = styled.div`
   /* display: flex;
   justify-content: flex-end;
   align-items: flex-end; */
   position: fixed;
+  border-radius: 50px;
   z-index: 100;
   bottom: 0;
   right: 20px;
-  margin-bottom: 5rem;
+  margin: 0 2rem 2rem 0;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  background-color: #10c18b;
+  :hover {
+    max-width: 300px;
+    span {
+      max-width: 300px;
+      margin-left: 1.5rem;
+    }
+  }
+  span {
+    font-size: 30px;
+    max-width: 0;
+    display: inline-block;
+    -webkit-transition: color .25s 1.5s, max-width 2s;
+    transition: color .25s 1.5s, max-width 2s;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+    margin-top: 1.7rem;
+  }
 `
+
 // End-Button-Device
 
 export const customStyles = {
