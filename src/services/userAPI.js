@@ -6,12 +6,8 @@ export async function register (value) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(value)
-    // "username": values.username,
-    // "email": values.email,
-    // "phone_number": values.phone_number,
-    // "password": values.password
   }
-  return fetch('http://0.0.0.0:3333/api/v1/_null_/', requestOptions)
+  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/auth/register`, requestOptions)
     .then(response => response.json())
 }
 
@@ -23,10 +19,8 @@ export async function login (value) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(value)
-    // "username": values.username,
-    // "password": values.password
   }
-  return fetch('http://0.0.0.0:3333/api/v1/_null_/', requestOptions)
+  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/auth/login`, requestOptions)
     .then(response => response.json())
 }
 // logout
@@ -45,6 +39,6 @@ export async function logout (tokenUser) {
       }
     )
   }
-  return fetch('http://0.0.0.0:3333/api/v1/_null_/', requestOptions)
+  return fetch(`${process.env.REACT_APP_API_ENDPOINT}/v1/auth/logout`, requestOptions)
     .then(response => response.json())
 }
