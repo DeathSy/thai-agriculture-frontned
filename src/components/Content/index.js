@@ -84,10 +84,12 @@ const Box = styled.div`
 // `
 
 function Content () {
-  const [dataDevice, setDataDevice] = useState()
+  const [dataDevice] = useState()
   const [setCount] = useState(0)
   React.useEffect(() => {
-    fetchDeviceById(localStorage.getItem('token'), localStorage.getItem('userId')).then(response => setDataDevice(response.device))
+    fetchDeviceById(localStorage.getItem('token'), localStorage.getItem('userId'))
+      .then(response => console.log(response))
+      // .then(response => setDataDevice(response.device))
     setTimeout(() => {
       setCount(1)
     }, 300000)

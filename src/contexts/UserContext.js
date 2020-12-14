@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const UserContext = createContext({})
 
@@ -9,8 +9,8 @@ export const UserContextProvider = ({ children }) => {
   })
   const [userRegister, setUserRegister] = useState({
     username: undefined,
-    password: undefined,
     email: undefined,
+    password: undefined,
     phone_number: undefined
   })
   const [userOnline, setUserOnline] = useState({
@@ -18,21 +18,11 @@ export const UserContextProvider = ({ children }) => {
     token: undefined
   })
   const [errorDisplay, setErrorDisplay] = useState('')
-  useEffect(() => {
-    if (userOnline.token) {
-      localStorage.setItem('userId', userOnline.userId)
-      localStorage.setItem('token', userOnline.token)
-      localStorage.setItem('refreshToken', null)
-    } else {
-      localStorage.removeItem('userId')
-      localStorage.removeItem('token')
-    }
-  }, [userOnline])
   const userValue = {
-    LoginState: [userLogin, setUserLogin],
-    RegisterState: [userRegister, setUserRegister],
-    Online: [userOnline, setUserOnline],
-    ErrorUser: [errorDisplay, setErrorDisplay]
+    LoginState: { userLogin: userLogin, setUserLogin: setUserLogin },
+    RegisterState: { userRegister: userRegister, setUserRegister: setUserRegister },
+    Online: { userOnline: userOnline, setUserOnline: setUserOnline },
+    ErrorUser: { errorDisplay: errorDisplay, setErrorDisplay: setErrorDisplay }
   }
   return (
     <UserContext.Provider value={userValue}>

@@ -9,7 +9,10 @@ import { logout } from '../../services/userAPI'
 function Navbar () {
   const history = useHistory()
   const handleClickOut = () => {
-    logout(localStorage.getItem('token')).then(() => localStorage.removeItem('token')).then(() => history.push('/'))
+    logout(localStorage.getItem('token'))
+    localStorage.removeItem('userId')
+    localStorage.removeItem('token')
+    history.push('/')
   }
   const isScroll = useScroll({ scrollRange: 20 })
   if (!localStorage.getItem('token')) {

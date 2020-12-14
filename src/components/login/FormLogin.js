@@ -99,16 +99,20 @@ const TextError = styled.h2`
 function FormLogin () {
   const history = useHistory()
   const { LoginState, Online } = React.useContext(UserContext)
-  const [userLogin, setUserLogin] = LoginState
-  const [setUserOnline] = Online
+  const { userLogin, setUserLogin } = LoginState
+  const { userOnline, setUserOnline } = Online
   React.useEffect(() => {
     localStorage.removeItem('error')
   }, [])
   const handleSubmit = () => {
     login(userLogin)
-      .then(response => setUserOnline({ userId: response.user.id, token: response.access_token.token }))
-      .then(() => history.push('/home'))
+      .then(response => setUserOnline({ ...userOnline, userId: response.user.id, token: response.access_token.token }))
       .catch(() => localStorage.setItem('error', 'invalid username or password'))
+    if (!localStorage.getItem('error')) {
+      localStorage.setItem('userId', userOnline.userId)
+      localStorage.setItem('token', userOnline.token)
+      history.push('/home')
+    }
   }
   return (
     <Container>
@@ -120,7 +124,7 @@ function FormLogin () {
           name='username'
           id='username'
           placeholder='e.g. JohnDoe'
-          onChange={(e) => setUserLogin(userLogin, { username: e.target.value })}
+          onChange={(e) => setUserLogin({ ...userLogin, username: e.target.value })}
         />
         <p>Password</p>
         <Input
@@ -128,7 +132,7 @@ function FormLogin () {
           name='password'
           id='password'
           placeholder='Password'
-          onChange={(e) => setUserLogin(userLogin, { password: e.target.value })}
+          onChange={(e) => setUserLogin({ ...userLogin, username: e.target.value })}
         />
         <TextError>{localStorage.getItem('error')}</TextError>
         <Submit>

@@ -95,12 +95,14 @@ const Wrapper = styled.div`
 function FormRegister (callback) {
   const history = useHistory()
   const { RegisterState, Online } = React.useContext(UserContext)
-  const [userRegister, setUserRegister] = RegisterState
-  const [setUserOnline] = Online
+  const { userRegister, setUserRegister } = RegisterState
+  const { userOnline, setUserOnline } = Online
   const handleRegister = () => {
     register(userRegister)
-      .then(response => setUserOnline({ userId: response.user.id, token: response.access_token.token }))
-      .then(() => history.push('/home'))
+      .then(response => setUserOnline({ ...userOnline, userId: response.user.id, token: response.access_token.token }))
+    localStorage.setItem('userId', userOnline.userId)
+    localStorage.setItem('token', userOnline.token)
+    history.push('/home')
   }
   return (
     <Container>
@@ -112,7 +114,7 @@ function FormRegister (callback) {
           name='username'
           id='username'
           placeholder='e.g.JohnDoe'
-          onChange={(e) => setUserRegister(userRegister, { username: e.target.value })}
+          onChange={(e) => setUserRegister({ ...userRegister, username: e.target.value })}
         />
 
         <p>Email</p>
@@ -121,7 +123,7 @@ function FormRegister (callback) {
           name='email'
           id='email'
           placeholder='e.g. JohnDoe@example.com'
-          onChange={(e) => setUserRegister(userRegister, { email: e.target.value })}
+          onChange={(e) => setUserRegister({ ...userRegister, email: e.target.value })}
         />
 
         <p>Phone Number</p>
@@ -130,7 +132,7 @@ function FormRegister (callback) {
           name='phone_number'
           id='phone_number'
           placeholder='e.g. 1234567890'
-          onChange={(e) => setUserRegister(userRegister, { phone_number: e.target.value })}
+          onChange={(e) => setUserRegister({ ...userRegister, phone_number: e.target.value })}
         />
 
         <p>Password</p>
@@ -139,7 +141,7 @@ function FormRegister (callback) {
           name='password'
           id='password'
           placeholder='Password'
-          onChange={(e) => setUserRegister(userRegister, { password: e.target.value })}
+          onChange={(e) => setUserRegister({ ...userRegister, password: e.target.value })}
         />
         {/* requires at least 8 digits */}
 
