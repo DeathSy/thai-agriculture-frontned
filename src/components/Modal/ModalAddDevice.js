@@ -4,7 +4,8 @@ import {
   TextTitle,
   InputDevice,
   ButtonAdd,
-  FooterDevice
+  FooterDevice,
+  ContainerDevice
 } from './styled'
 function ModalAddDevice () {
   const [valueId, setValueId] = useState('')
@@ -12,7 +13,7 @@ function ModalAddDevice () {
   const handleInputId = event => setValueId(event.target.value)
   const handleInputName = event => setValueName(event.target.value)
   return (
-    <>
+    <ContainerDevice>
       <ContentDevice>
         <TextTitle>Device ID</TextTitle>
         <InputDevice value={valueId} onChange={handleInputId} />
@@ -22,7 +23,7 @@ function ModalAddDevice () {
       <FooterDevice>
         <ButtonAdd>Add</ButtonAdd>
       </FooterDevice>
-    </>
+    </ContainerDevice>
   )
 }
 

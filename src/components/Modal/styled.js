@@ -1,10 +1,18 @@
 import styled from 'styled-components'
 
-// Start-Content-
+// Start-Content
 export const ContentDevice = styled.div`
   padding: 10px 0px;
   display: flex;
   flex-direction: column;
+`
+export const ContainerDevice = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Cabin', sans-serif;
 `
 export const TextTitle = styled.h2`
   font-size: 1.25rem;
@@ -13,7 +21,7 @@ export const TextTitle = styled.h2`
 export const InputDevice = styled.input`
   width: 93%;
   height: 25px;
-  margin: 5px 0;
+  margin: 5px 0px 10px 0;
   padding: 5px 10px;
   border-radius: 20px;
   border: solid 2px black;
@@ -26,20 +34,19 @@ export const InputDevice = styled.input`
 export const InputInfomation = styled.input`
   border-radius: 20px;
   width: 25%;
-  height: 25px;
+  height: 30px;
   margin-bottom: 10px;
   font-size: 1rem;
+  border: solid 1px;
+  padding-left: 10px;
 `
 export const ContentInfo = styled.div`
   padding: 10px 0px;
   display: flex;
-  justify-content: space-between;
-`
-export const ContentMinMax = styled.div`
-  display: flex;
-  flex: 1;
   flex-direction: column;
+  justify-content: space-between;
   margin-left: 1rem;
+  font-family: 'Cabin', sans-serif;
 `
 export const ContentSelect = styled.div`
   width: 50%;
@@ -47,6 +54,7 @@ export const ContentSelect = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: left;
+  margin-bottom: 1rem;
 `
 export const customStyles = {
   option: (provided, state) => ({
@@ -64,12 +72,12 @@ export const customStyles = {
       padding: 1
     })
   }),
-  container: (base) => ({
+  container: base => ({
     ...base,
     display: 'inline-block',
     width: '14vw'
   }),
-  valueContainer: (base) => ({
+  valueContainer: base => ({
     ...base,
     minHeight: '2vw'
   })
@@ -80,7 +88,7 @@ export const customStyles = {
 // Start-Footer
 export const FooterDevice = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 0.5rem;
 `
 export const ButtonAdd = styled.button`
