@@ -17,22 +17,27 @@ export const UserContextProvider = ({ children }) => {
     userId: undefined,
     token: undefined
   })
-  const userValue = {
-    LoginState: { userLogin, setUserLogin },
-    RegisterState: { userRegister, setUserRegister },
-    userOnline: { userOnline, setUserOnline }
-  }
+  const [errorDisplay, setErrorDisplay] = useState('')
   useEffect(() => {
     if (userOnline.token) {
       localStorage.setItem('userId', userOnline.userId)
       localStorage.setItem('token', userOnline.token)
       localStorage.setItem('refreshToken', null)
     } else {
-      localStorage.clear()
+      localStorage.removeItem('userId')
+      localStorage.removeItem('token')
     }
   }, [userOnline])
+  const userValue = {
+    LoginState: [userLogin, setUserLogin],
+    RegisterState: [userRegister, setUserRegister],
+    Online: [userOnline, setUserOnline],
+    ErrorUser: [errorDisplay, setErrorDisplay]
+  }
   return (
-    <UserContext.Provider value={userValue}> {children} </UserContext.Provider>
+    <UserContext.Provider value={userValue}>
+      {children}
+    </UserContext.Provider>
   )
 }
 
