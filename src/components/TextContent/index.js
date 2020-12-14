@@ -6,7 +6,7 @@ const Container = styled.div`
   width: 45vw;
   height: 40vh;
   display: flex;
-  justify-content: center;
+  jutify-content: center;
   align-items: center;
   margin-left: 3rem;
   flex-direction: column;
@@ -19,7 +19,7 @@ const Text = styled.div`
   font-family: 'Nerko One', cursive;
 
   h1 {
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 550;
   }
   p {
