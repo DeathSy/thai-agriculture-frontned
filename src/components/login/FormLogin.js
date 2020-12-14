@@ -5,7 +5,7 @@ const Container = styled.div`
     height: 500px;
     width: 400px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +40,7 @@ const Input = styled.input`
     border: none;
     border:solid 1px gray;
     outline: none;
+    border-radius: 50px;
     &:focus {
         border: 1px solid #0C1737;
     }
@@ -54,7 +55,7 @@ const Login = styled.button`
     color: white;
     font-size: 20px;
     outline: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     &:hover {
     background-color: #00a472;
