@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 const Container = styled.div`
     height: 600px;
     width: 400px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,16 +20,22 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     a {
-        margin-top: 5px;
-        font-size: 16px;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+    span {
+      font-size: 12px;
+      color: #f44336;
+      margin-top: 0.25rem;
+      margin-left: 0.5rem;
     }
 `
 
-const Title = styled.span`
+const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 180px;
     font-size: 2rem;
     color: #1E3859;
 `
@@ -41,6 +48,7 @@ const Input = styled.input`
     border: none;
     border:solid 1px gray;
     outline: none;
+    border-radius: 50px;
     &:focus {
         border: 1px solid #0C1737;
     }
@@ -57,6 +65,7 @@ const Button = styled.button`
     outline: none;
     border-radius: 5px;
     cursor: pointer;
+    border-radius: 50px;
     &:hover {
     background-color: #00a472;
     }
@@ -89,52 +98,71 @@ const Register = styled.button`
 const Wrapper = styled.div`
     margin-bottom: 20px;
 `
+const Label = styled.div`
+  display: flex;
+`
 
-function FormRegister (callback) {
+function FormRegister () {
+  const { register, handleSubmit, watch, errors } = useForm()
+  const onSubmit = data => console.log(data)
+  console.log(watch('example'))
+
   return (
     <Container>
-      <Form>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Title>Register</Title>
-        <p>Username</p>
+        <Label><p>Username</p>{errors.username && <span>⚠ Username is required</span>}</Label>
         <Input
           type='text'
           name='username'
           id='username'
           placeholder='e.g.JohnDoe'
+          ref={register({ required: true })}
         />
 
-        <p>Email</p>
+        <Label>
+          <p>Email</p>
+          {errors.email && (errors.email?.type) === 'required' && <span>⚠ Email is required</span>}
+          {errors.email && (errors.email?.type) === 'pattern' && <span>⚠ Not a valid Email</span>}
+        </Label>
         <Input
           type='text'
           name='email'
           id='email'
           placeholder='e.g. JohnDoe@example.com'
+          ref={register({ required: true, pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ })}
         />
 
-        <p>Phone Number</p>
+        <Label>
+          <p>Phone Number</p>
+          {errors.email && (errors.phone_number?.type) === 'required' && <span>⚠ Phone number is required</span>}
+          {errors.email && (errors.phone_number?.type) === 'pattern' && <span>⚠ Phone number is not valid</span>}
+        </Label>
         <Input
           type='text'
           name='phone_number'
           id='phone_number'
           placeholder='e.g. 1234567890'
+          ref={register({ required: true, pattern: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/ })}
         />
 
-        <p>Password</p>
+        <Label><p>Password</p>{errors.password && <span>⚠ Password is required</span>}</Label>
         <Input
           type='password'
           name='password'
           id='password'
           placeholder='Password'
+          ref={register({ required: true })}
         />
-        {/* requires at least 8 digits */}
 
         <p>Confirm Password</p>
         <Input
           type='password'
-          name='comfirmPassword'
-          id='comfirmPassword'
+          name='comfirm_password'
+          id='comfirm_password'
           placeholder='Type your password again'
         />
+
         <Submit>
           <Button type='submit'>Submit</Button>
           <Wrapper>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></Wrapper>
