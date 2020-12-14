@@ -3,7 +3,6 @@ import {
   ContentInfo,
   ContentSelect,
   TextTitle,
-  ContentMinMax,
   InputInfomation,
   ButtonAdd,
   FooterDevice,
@@ -23,16 +22,18 @@ function ModalAddDevice () {
   return (
     <>
       <ContentInfo>
+        <TextTitle>Information</TextTitle>
         <ContentSelect>
-          <TextTitle>Information</TextTitle>
-          <Select placeholder='Information' styles={customStyles} options={options} />
+          <Select
+            placeholder='Information'
+            styles={customStyles}
+            options={options}
+          />
         </ContentSelect>
-        <ContentMinMax>
-          <TextTitle>Maximum range</TextTitle>
-          <InputInfomation min={20.0} max={50.0} step={0.5} type='number' />
-          <TextTitle>Minimum range</TextTitle>
-          <InputInfomation min={20.0} max={50.0} step={0.5} type='number' />
-        </ContentMinMax>
+        <TextTitle>Maximum range</TextTitle>
+        <InputInfomation min={20.0} max={50.0} step={0.5} type='number' />
+        <TextTitle>Minimum range</TextTitle>
+        <InputInfomation min={20.0} max={50.0} step={0.5} type='number' />
       </ContentInfo>
       <FooterDevice>
         <ButtonAdd>Add</ButtonAdd>
