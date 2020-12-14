@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import ButtonAddDevice from '../ButtonModal/ButtonDevice'
 import AddInfo from '../ButtonModal/ButtonInfo'
-import { fetchDataById } from '../../services/fetchData'
+import { fetchDeviceById } from '../../services/fetchData'
 import Editbutton from './Editbutton'
 import Img from '../../assets/edit.png'
 
@@ -87,7 +87,7 @@ function Content () {
   const [dataDevice, setDataDevice] = useState()
   const [setCount] = useState(0)
   React.useEffect(() => {
-    fetchDataById(localStorage.getItem('token'), localStorage.getItem('userId')).then(response => setDataDevice(response.device))
+    fetchDeviceById(localStorage.getItem('token'), localStorage.getItem('userId')).then(response => setDataDevice(response.device))
     setTimeout(() => {
       setCount(1)
     }, 300000)
