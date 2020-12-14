@@ -40,6 +40,7 @@ const Input = styled.input`
   border: none;
   border: solid 1px gray;
   outline: none;
+  border-radius: 50px;
   &:focus {
     border: 1px solid #0c1737;
   }
@@ -56,6 +57,7 @@ const Login = styled.button`
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+  border-radius: 50px;
   &:hover {
     background-color: #00a472;
   }
