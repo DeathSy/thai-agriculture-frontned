@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import UserContext from '../../contexts/UserContext'
+import { register } from '../../services/userAPI'
 
 const Container = styled.div`
     height: 600px;
@@ -91,6 +93,15 @@ const Wrapper = styled.div`
 `
 
 function FormRegister (callback) {
+  const history = useHistory()
+  const { RegisterState, Online } = React.useContext(UserContext)
+  const [userRegister, setUserRegister] = RegisterState
+  const [setUserOnline] = Online
+  const handleRegister = () => {
+    register(userRegister)
+      .then(response => setUserOnline({ userId: response.user.id, token: response.access_token.token }))
+      .then(() => history.push('/home'))
+  }
   return (
     <Container>
       <Form>
@@ -101,6 +112,7 @@ function FormRegister (callback) {
           name='username'
           id='username'
           placeholder='e.g.JohnDoe'
+          onChange={(e) => setUserRegister(userRegister, { username: e.target.value })}
         />
 
         <p>Email</p>
@@ -109,6 +121,7 @@ function FormRegister (callback) {
           name='email'
           id='email'
           placeholder='e.g. JohnDoe@example.com'
+          onChange={(e) => setUserRegister(userRegister, { email: e.target.value })}
         />
 
         <p>Phone Number</p>
@@ -117,6 +130,7 @@ function FormRegister (callback) {
           name='phone_number'
           id='phone_number'
           placeholder='e.g. 1234567890'
+          onChange={(e) => setUserRegister(userRegister, { phone_number: e.target.value })}
         />
 
         <p>Password</p>
@@ -125,6 +139,7 @@ function FormRegister (callback) {
           name='password'
           id='password'
           placeholder='Password'
+          onChange={(e) => setUserRegister(userRegister, { password: e.target.value })}
         />
         {/* requires at least 8 digits */}
 
@@ -136,7 +151,7 @@ function FormRegister (callback) {
           placeholder='Type your password again'
         />
         <Submit>
-          <Button type='submit'>Submit</Button>
+          <Button type='submit' onClick={handleRegister}>Submit</Button>
           <Wrapper>Already have an account? | <Register><Link to='/Login'>Login</Link></Register></Wrapper>
         </Submit>
       </Form>
