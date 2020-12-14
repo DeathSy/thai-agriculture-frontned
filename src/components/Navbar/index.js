@@ -3,12 +3,16 @@ import { Action, Wrapper, ActionContainer } from './styled'
 import Logo from './Logo'
 import Imglogo from '../../assets/field.png'
 import useScroll from '../../util/useScroll'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { logout } from '../../services/userAPI'
 
 function Navbar () {
+  const history = useHistory()
+  const handleClickOut = () => {
+    logout(localStorage.getItem('token')).then(() => history.push('/'))
+  }
   const isScroll = useScroll({ scrollRange: 20 })
-  const i = 0
-  if (i === 1) {
+  if (!localStorage.getItem('token')) {
     return (
       <Wrapper isScroll={isScroll}>
         <Logo src={Imglogo} />
@@ -27,7 +31,7 @@ function Navbar () {
       <Wrapper isScroll={isScroll}>
         <Logo src={Imglogo} />
         <ActionContainer>
-          <Action>Logout</Action>
+          <Action onClick={handleClickOut}>Logout</Action>
         </ActionContainer>
       </Wrapper>
     )
