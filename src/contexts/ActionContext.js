@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react'
-
 export const ActionContext = createContext({})
 
 export const ActionContextProvider = ({ children }) => {
@@ -19,13 +18,11 @@ export const ActionContextProvider = ({ children }) => {
     sun_lux_avg: undefined
   })
   const actionValue = {
-    updateDeivce: updateDeivce,
-    setUpdateDevice: setUpdateDevice
+    deviceUpdate: [updateDeivce, setUpdateDevice]
   }
   return (
     <ActionContext.Provider value={actionValue}>
-      {' '}
-      {children}{' '}
+      {children}
     </ActionContext.Provider>
   )
 }
