@@ -84,34 +84,32 @@ const Box = styled.div`
 // `
 
 function Content () {
-  const dogetoken =
-    'd3e0ba358160b45d3344cfffa1b014542Yd1NyQr5vwJQ6bHRNyVyvttYr0fib+qmNUSmNr/xzQ/wJJsvDAUzdUotmCZQZPA'
   const [dataDevice, setDataDevice] = useState()
+  const [setCount] = useState(0)
   React.useEffect(() => {
-    fetchDataById(dogetoken).then(response => setDataDevice(response))
+    fetchDataById(localStorage.getItem('token'), localStorage.getItem('userId')).then(response => setDataDevice(response.device))
+    setTimeout(() => {
+      setCount(1)
+    }, 300000)
   }, [])
-  console.log(dataDevice)
   return (
     <>
       <Container>
         <h1>WELCOME</h1>
-        <AddDevice>
-          <h2>Device Name 1</h2>
-          <WrapperBox>
-            {dataDevice?.status}
-            {dataDevice?.devices.map(itemDevice =>
-              itemDevice.sensors.map(item => (
-                <Box key={item}>
+        <WrapperBox>
+          {dataDevice?.map(itemDevice =>
+            <AddDevice key={itemDevice.device_id}>
+              {itemDevice.forEach((items, key) => (
+                <Box>
                   <Close>
                     <Editbutton src={Img} />
                   </Close>
-                  {item.type}:{item.valueProperties.value} {item.unit}
+                  {key}:{items}
                 </Box>
-              ))
-            )}
-            <AddInfo />
-          </WrapperBox>
-        </AddDevice>
+              ))}
+            </AddDevice>)}
+          <AddInfo />
+        </WrapperBox>
         <ButtonAddDevice />
       </Container>
     </>
